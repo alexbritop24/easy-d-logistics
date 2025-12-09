@@ -1,24 +1,23 @@
-import { Link } from "react-router-dom";
-
 export default function CTABanner() {
   return (
-    <section className="bg-accent py-14 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-primary-softer mb-4">
-          Ready to Start Dispatching With Easy D Logistics?
+    <section className="py-16 bg-[var(--color-primary)] text-white">
+      <div className="max-w-6xl mx-auto text-center px-6">
+
+        <h2 className="text-3xl font-bold">
+          Ready To Maximize Your Earnings?
         </h2>
 
-        <p className="text-primary-softer/80 text-sm mb-6 max-w-xl mx-auto">
-          Our team is ready 24/7 to keep your wheels turning.  
-          Get started today and secure better loads, better rates, and a better workflow.
+        <p className="mt-4 text-gray-300">
+          Join Easy D Logistics and get premium dispatching — without the stress.
         </p>
 
-        <Link
-          to="/get-started"
-          className="px-8 py-3 bg-primary-softer text-accent font-semibold rounded-full hover:bg-primary transition"
+        <a
+          href="/get-started"
+          className="inline-block mt-8 px-10 py-3 bg-[var(--color-accent)] text-black font-semibold rounded-lg hover:bg-green-400 transition"
         >
-          Start Today
-        </Link>
+          Get Started Now
+        </a>
+
       </div>
     </section>
   );

@@ -2,54 +2,44 @@ export default function Services() {
   const servicesList = [
     {
       title: "Dry Van Dispatch",
-      description:
-        "Reliable, consistent dispatching for Dry Van carriers, including load planning, negotiation, and optimized routing.",
+      description: "Consistent, high-demand freight with optimized routes.",
     },
     {
       title: "Flatbed Dispatch",
-      description:
-        "Specialized dispatching for flatbeds — including securement requirements, higher-rate loads, and tarping considerations.",
+      description: "Specialized freight with higher RPM and careful planning.",
     },
     {
       title: "Power-Only Dispatch",
-      description:
-        "We manage drop-and-hook, trailer moves, and spot power-only freight to keep you moving with minimal downtime.",
+      description: "Drop-and-hook setups with minimal downtime.",
     },
     {
       title: "Box Truck Dispatch",
-      description:
-        "High-demand dispatching for box trucks with regional and national load opportunities.",
+      description: "Local and regional freight options with steady availability.",
     },
     {
       title: "Paperwork & Compliance",
-      description:
-        "Carrier packets, rate confirmations, invoicing, BOL management, compliance documents, and factoring assistance.",
+      description: "Carrier packets, rate confirmations, invoicing, and more.",
     },
     {
       title: "Broker Negotiation",
-      description:
-        "We negotiate strong rates, understand market trends, and ensure fair agreements with trusted brokers.",
+      description: "Professional negotiation for the best possible load rates.",
     },
   ];
 
   return (
-    <section className="bg-primary text-white py-20 px-6">
+    <section className="py-20 bg-[var(--color-primary)] text-white px-6">
       <div className="max-w-6xl mx-auto">
 
-        <h1 className="text-4xl font-bold text-center mb-12">
-          Easy D Logistics Services
-        </h1>
+        <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
           {servicesList.map((service) => (
             <div
               key={service.title}
-              className="p-6 rounded-xl bg-primary-light border border-slate-700"
+              className="p-6 bg-[var(--color-primary-softer)] rounded-xl border border-[var(--color-accent)]"
             >
-              <h2 className="text-2xl font-semibold text-accent mb-2">
-                {service.title}
-              </h2>
-              <p className="text-slate-300 text-sm">{service.description}</p>
+              <h2 className="text-2xl font-bold text-[var(--color-accent)]">{service.title}</h2>
+              <p className="mt-2 text-gray-300">{service.description}</p>
             </div>
           ))}
         </div>

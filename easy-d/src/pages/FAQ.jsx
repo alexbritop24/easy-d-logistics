@@ -1,66 +1,55 @@
 import { useState } from "react";
 
 export default function FAQ() {
-  const faqList = [
+  const items = [
     {
-      question: "What does a dispatch service do?",
-      answer:
-        "We find loads, negotiate rates, handle paperwork, manage route planning, and provide 24/7 support so you can stay focused on driving.",
+      q: "What does a dispatch service do?",
+      a: "We book loads, negotiate rates, handle paperwork, and provide 24/7 support.",
     },
     {
-      question: "How much does Easy D Logistics charge?",
-      answer:
-        "We offer three pricing plans starting at 7% of the load. Pro and Premium tiers include factoring support, compliance, and dedicated dispatchers.",
+      q: "How much do you charge?",
+      a: "Pricing starts at 7% per load with Pro and Premium plans available.",
     },
     {
-      question: "Do I need an MC number to work with you?",
-      answer:
-        "Yes. All carriers must have active MC authority, insurance, and compliance requirements in place to begin dispatching.",
+      q: "Do you force dispatch?",
+      a: "Never. Drivers approve every load before booking.",
     },
     {
-      question: "What equipment types do you dispatch?",
-      answer:
-        "We work with Dry Van, Flatbed, Box Truck, Power-Only, Reefer, and Hotshot equipment.",
+      q: "What equipment do you dispatch?",
+      a: "Dry Van, Flatbed, Power-Only, Box Truck, and more.",
     },
     {
-      question: "Am I forced into loads?",
-      answer:
-        "Never. You always approve every load before we book it. You remain in full control of your business.",
-    },
-    {
-      question: "Is there a contract?",
-      answer:
-        "We do not lock drivers into long-term contracts. You can stop using our service anytime.",
+      q: "Do I need an MC number?",
+      a: "Yes, you need active MC authority and insurance.",
     },
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [open, setOpen] = useState(null);
 
   return (
-    <section className="bg-primary text-white py-20 px-6">
+    <section className="py-20 bg-[var(--color-primary)] text-white px-6">
       <div className="max-w-4xl mx-auto">
 
         <h1 className="text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h1>
 
         <div className="space-y-4">
-          {faqList.map((item, index) => (
-            <div key={index} className="bg-primary-light border border-slate-700 rounded-xl">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              className="bg-[var(--color-primary-softer)] border border-gray-700 rounded-lg"
+            >
               <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+                onClick={() => setOpen(open === i ? null : i)}
+                className="w-full text-left px-6 py-4 font-semibold flex items-center justify-between"
               >
-                <span>{item.question}</span>
-                <span className="text-accent">{openIndex === index ? "-" : "+"}</span>
+                {item.q}
+                <span className="text-[var(--color-accent)]">
+                  {open === i ? "-" : "+"}
+                </span>
               </button>
 
-              {openIndex === index && (
-                <div className="px-6 pb-4 text-slate-300 text-sm">
-                  {item.answer}
-                </div>
+              {open === i && (
+                <p className="px-6 pb-4 text-gray-300">{item.a}</p>
               )}
             </div>
           ))}

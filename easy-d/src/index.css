@@ -1,7 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./theme.css";
 
 body {
-  @apply bg-primary-softer text-white antialiased;
+  background-color: var(--color-primary-softer);
+  color: white;
 }

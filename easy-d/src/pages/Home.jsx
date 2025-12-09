@@ -14,8 +14,8 @@ export default function Home() {
       <HowItWorks />
       <ServicesOverview />
       <EarningsProjection />
-      <Testimonials/>
-      <CTABanner/>
+      <Testimonials />
+      <CTABanner />
     </>
   );
 }
