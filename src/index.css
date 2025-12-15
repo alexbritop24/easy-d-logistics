@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @import "./theme.css";
 
+/* Global defaults */
 body {
-  background-color: var(--color-primary-softer);
-  color: white;
+  background-color: var(--color-primary-muted);
+  color: var(--color-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }

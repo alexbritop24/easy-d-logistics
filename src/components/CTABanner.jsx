@@ -13,7 +13,16 @@ export default function CTABanner() {
 
         <a
           href="/get-started"
-          className="inline-block mt-8 px-10 py-3 bg-[var(--color-accent)] text-black font-semibold rounded-lg hover:bg-green-400 transition"
+          className="
+            inline-block mt-8
+            px-10 py-3
+            bg-[var(--color-accent)]
+            text-[var(--color-primary)]
+            font-semibold
+            rounded-lg
+            transition
+            hover:opacity-90
+          "
         >
           Get Started Now
         </a>

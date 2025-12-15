@@ -1,13 +1,10 @@
-@import "tailwindcss/theme";
-
-/* BRAND VARIABLES */
 :root {
-  --color-primary: #1F0F72;
-  --color-primary-light: #1E1293;
-  --color-primary-softer: #343415;
-  --color-accent: #22C55E;
-}
+  /* Core brand colors */
+  --color-primary: #0f1f3a;        /* main dark navy */
+  --color-primary-softer: #172a4f; /* card / section contrast */
+  --color-accent: #9cc9e6;         /* light blue accent */
 
-@theme {
-  /* Only animations / custom property aliases allowed */
+  /* Text */
+  --color-text-primary: #ffffff;
+  --color-text-muted: #cbd5e1;
 }

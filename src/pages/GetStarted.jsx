@@ -12,7 +12,8 @@ export default function GetStarted() {
     revenueGoal: "",
   });
 
-  const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const update = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const submit = (e) => {
     e.preventDefault();
@@ -23,13 +24,21 @@ export default function GetStarted() {
     <section className="py-20 bg-[var(--color-primary)] text-white px-6">
       <div className="max-w-3xl mx-auto">
 
-        <h1 className="text-4xl font-bold text-center mb-10">Get Started</h1>
+        <h1 className="text-4xl font-bold text-center mb-10">
+          Get Started
+        </h1>
 
         <form
           onSubmit={submit}
-          className="p-8 bg-[var(--color-primary-softer)] rounded-xl border border-[var(--color-accent)] space-y-6"
+          className="
+            p-8
+            bg-[var(--color-primary-softer)]
+            rounded-xl
+            border
+            border-[var(--color-accent)]
+            space-y-6
+          "
         >
-
           {[
             { label: "Full Name", name: "name" },
             { label: "Phone", name: "phone" },
@@ -41,22 +50,49 @@ export default function GetStarted() {
             { label: "Weekly Revenue Goal", name: "revenueGoal" },
           ].map((field) => (
             <div key={field.name}>
-              <label className="block text-sm mb-1">{field.label}</label>
+              <label className="block text-sm mb-1 text-white/80">
+                {field.label}
+              </label>
+
               <input
                 name={field.name}
                 type={field.type || "text"}
                 onChange={update}
                 required={field.name !== "mcNumber"}
-                className="w-full px-4 py-3 rounded bg-[var(--color-primary)] border border-gray-600 focus:border-[var(--color-accent)] outline-none"
                 placeholder={field.label}
+                className="
+                  w-full
+                  px-4
+                  py-3
+                  rounded
+                  bg-[var(--color-primary)]
+                  border
+                  border-white/20
+                  focus:border-[var(--color-accent)]
+                  outline-none
+                  text-white
+                  placeholder-white/40
+                  transition
+                "
               />
             </div>
           ))}
 
-          <button className="w-full py-3 bg-[var(--color-accent)] text-black font-semibold rounded-lg hover:bg-green-400 transition">
+          <button
+            type="submit"
+            className="
+              w-full
+              py-3
+              rounded-lg
+              font-semibold
+              bg-[var(--color-accent)]
+              text-[var(--color-primary)]
+              transition
+              hover:opacity-90
+            "
+          >
             Submit Information
           </button>
-
         </form>
 
       </div>
