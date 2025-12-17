@@ -15,7 +15,7 @@ export default function Navbar() {
         </h1>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 text-white font-medium items-center">
+        <div className="hidden md:flex items-center gap-8 text-white font-medium">
 
           <a href="/" className="hover:text-[var(--color-accent)] transition">
             Home
@@ -28,35 +28,41 @@ export default function Navbar() {
           {/* Desktop Services Dropdown */}
           <div className="relative group">
             <button className="flex items-center gap-1 hover:text-[var(--color-accent)] transition">
-              Services ▾
+              Services <span className="text-xs opacity-70">▼</span>
             </button>
 
-            <div className="
-              absolute
-              top-full
-              left-0
-              mt-2
-              w-44
-              bg-[var(--color-primary-softer)]
-              border
-              border-white/10
-              rounded-lg
-              opacity-0
-              invisible
-              group-hover:opacity-100
-              group-hover:visible
-              transition
-            ">
-              <a href="/services" className="block px-4 py-2 hover:bg-white/5">
+            <div
+              className="
+                absolute
+                top-full
+                left-0
+                mt-3
+                w-56
+                rounded-xl
+                bg-[var(--color-primary-softer)]
+                border
+                border-white/10
+                shadow-xl
+                opacity-0
+                invisible
+                translate-y-2
+                transition-all
+                duration-200
+                group-hover:opacity-100
+                group-hover:visible
+                group-hover:translate-y-0
+              "
+            >
+              <a href="/services" className="block px-4 py-3 text-sm hover:bg-white/5">
                 All Services
               </a>
-              <a href="/services/dry-van" className="block px-4 py-2 hover:bg-white/5">
+              <a href="/services/dry-van" className="block px-4 py-3 text-sm hover:bg-white/5">
                 Dry Van
               </a>
-              <a href="/services/flatbed" className="block px-4 py-2 hover:bg-white/5">
+              <a href="/services/flatbed" className="block px-4 py-3 text-sm hover:bg-white/5">
                 Flatbed
               </a>
-              <a href="/services/box-truck" className="block px-4 py-2 hover:bg-white/5">
+              <a href="/services/box-truck" className="block px-4 py-3 text-sm hover:bg-white/5">
                 Box Truck
               </a>
             </div>
@@ -74,12 +80,12 @@ export default function Navbar() {
             href="/get-started"
             className="
               ml-4
-              bg-[var(--color-accent)]
-              text-[var(--color-primary)]
-              font-semibold
-              px-5
+              px-6
               py-2
               rounded-lg
+              font-semibold
+              bg-[var(--color-accent)]
+              text-[var(--color-primary)]
               transition
               hover:opacity-90
             "
@@ -90,8 +96,11 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-white text-3xl"
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+            if (menuOpen) setServicesOpen(false);
+          }}
         >
           ☰
         </button>
@@ -99,13 +108,27 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[var(--color-primary)] border-t border-white/10 px-6 py-4 space-y-4 text-white">
+        <div className="md:hidden bg-[var(--color-primary)] border-t border-white/10 px-6 py-6 space-y-6 text-white text-lg">
 
-          <a href="/" onClick={() => setMenuOpen(false)} className="block">
+          <a
+            href="/"
+            onClick={() => {
+              setMenuOpen(false);
+              setServicesOpen(false);
+            }}
+            className="block"
+          >
             Home
           </a>
 
-          <a href="/about" onClick={() => setMenuOpen(false)} className="block">
+          <a
+            href="/about"
+            onClick={() => {
+              setMenuOpen(false);
+              setServicesOpen(false);
+            }}
+            className="block"
+          >
             About
           </a>
 
@@ -113,50 +136,95 @@ export default function Navbar() {
           <div>
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex justify-between w-full"
+              className="flex justify-between w-full py-2 font-semibold"
             >
               Services
               <span>{servicesOpen ? "−" : "+"}</span>
             </button>
 
             {servicesOpen && (
-              <div className="mt-2 ml-4 space-y-2 text-white/80">
-                <a href="/services" onClick={() => setMenuOpen(false)} className="block">
+              <div className="mt-2 ml-4 space-y-3 text-white/80 text-base">
+                <a
+                  href="/services"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  className="block"
+                >
                   All Services
                 </a>
-                <a href="/services/dry-van" onClick={() => setMenuOpen(false)} className="block">
+                <a
+                  href="/services/dry-van"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  className="block"
+                >
                   Dry Van
                 </a>
-                <a href="/services/flatbed" onClick={() => setMenuOpen(false)} className="block">
+                <a
+                  href="/services/flatbed"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  className="block"
+                >
                   Flatbed
                 </a>
-                <a href="/services/box-truck" onClick={() => setMenuOpen(false)} className="block">
+                <a
+                  href="/services/box-truck"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  className="block"
+                >
                   Box Truck
                 </a>
               </div>
             )}
           </div>
 
-          <a href="/pricing" onClick={() => setMenuOpen(false)} className="block">
+          <a
+            href="/pricing"
+            onClick={() => {
+              setMenuOpen(false);
+              setServicesOpen(false);
+            }}
+            className="block"
+          >
             Pricing
           </a>
 
-          <a href="/contact" onClick={() => setMenuOpen(false)} className="block">
+          <a
+            href="/contact"
+            onClick={() => {
+              setMenuOpen(false);
+              setServicesOpen(false);
+            }}
+            className="block"
+          >
             Contact
           </a>
 
           <a
             href="/get-started"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              setServicesOpen(false);
+            }}
             className="
               block
               text-center
+              mt-2
+              py-3
+              rounded-lg
+              font-semibold
               bg-[var(--color-accent)]
               text-[var(--color-primary)]
-              font-semibold
-              py-2
-              rounded-lg
-              mt-2
             "
           >
             Get Started
