@@ -1,75 +1,104 @@
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-primary-softer)] text-white">
-      <div
-        className="
-          max-w-7xl mx-auto px-6
-          py-8 md:py-14
-          grid grid-cols-1 md:grid-cols-3
-          gap-6 md:gap-10
-        "
-      >
+    <footer className="bg-[var(--color-primary-softer)] text-white mt-16">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
         {/* Branding */}
         <div>
-          <h2 className="text-lg md:text-2xl font-bold">
-            Easy D{" "}
-            <span className="text-[var(--color-accent)]">Logistics</span>
+          <h2 className="text-xl md:text-2xl font-bold leading-tight">
+            Easy D <span className="text-[var(--color-accent)]">Logistics</span>
           </h2>
 
-          <p className="mt-2 text-sm text-white/65 leading-snug">
+          <p className="mt-3 text-white/70 text-sm md:text-base leading-relaxed">
             Professional dispatching services for owner-operators and small fleets.
+            We keep your wheels turning and earnings growing.
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-base md:text-xl font-bold mb-2">
+          <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
             Quick Links
           </h3>
 
-          <ul className="space-y-1 text-sm text-white/65">
-            <li><a href="/" className="hover:text-[var(--color-accent)] transition">Home</a></li>
-            <li><a href="/services" className="hover:text-[var(--color-accent)] transition">Services</a></li>
-            <li><a href="/pricing" className="hover:text-[var(--color-accent)] transition">Pricing</a></li>
-            <li><a href="/about" className="hover:text-[var(--color-accent)] transition">About</a></li>
-            <li><a href="/contact" className="hover:text-[var(--color-accent)] transition">Contact</a></li>
+          <ul className="space-y-2 text-white/70 text-sm md:text-base">
+            <li>
+              <a href="/" className="hover:text-[var(--color-accent)] transition">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/services"
+                className="hover:text-[var(--color-accent)] transition"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="/pricing"
+                className="hover:text-[var(--color-accent)] transition"
+              >
+                Pricing
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+                className="hover:text-[var(--color-accent)] transition"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className="hover:text-[var(--color-accent)] transition"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Contact */}
         <div>
-          <h3 className="text-base md:text-xl font-bold mb-2">
+          <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
             Contact
           </h3>
 
-          <ul className="space-y-1 text-sm text-white/65">
-            <li>
-              <span className="text-[var(--color-accent)] font-semibold">Email:</span>{" "}
-              dispatch@easydlogistics.com
+          {/* Mobile: compact single-line rows. Desktop: same, just larger text */}
+          <ul className="space-y-2 text-white/70 text-sm md:text-base">
+            <li className="flex gap-2">
+              <span className="font-semibold text-[var(--color-accent)]">
+                Email:
+              </span>
+              <span>dispatch@easydlogistics.com</span>
             </li>
-            <li>
-              <span className="text-[var(--color-accent)] font-semibold">Phone:</span>{" "}
-              (555) 123-4567
+
+            <li className="flex gap-2">
+              <span className="font-semibold text-[var(--color-accent)]">
+                Phone:
+              </span>
+              <span>(555) 123-4567</span>
             </li>
-            <li>
-              <span className="text-[var(--color-accent)] font-semibold">Hours:</span>{" "}
-              24/7 Dispatch Support
+
+            <li className="flex gap-2">
+              <span className="font-semibold text-[var(--color-accent)]">
+                Hours:
+              </span>
+              <span>24/7 Dispatch Support</span>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div
-        className="
-          text-center
-          text-[11px] md:text-sm
-          text-white/45
-          border-t border-white/10
-          py-3
-        "
-      >
-        © {new Date().getFullYear()} Easy D Logistics. All rights reserved.
+      {/* Bottom */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-white/50 text-xs md:text-sm">
+          © {new Date().getFullYear()} Easy D Logistics. All rights reserved.
+          <span className="sr-only">build-footer-v2</span>
+        </div>
       </div>
     </footer>
   );
