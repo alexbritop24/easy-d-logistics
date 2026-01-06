@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 import Hero from "../components/Hero";
 import ServicesOverview from "../components/ServicesOverview";
+import HowItWorks from "../components/HowItWorks";
 import EarningsProjection from "../components/EarningsProjection";
 import Testimonials from "../components/Testimonials";
 
@@ -10,8 +11,11 @@ export default function Home() {
       {/* HERO */}
       <Hero />
 
-      {/* SERVICES (now includes the 6 cards) */}
+      {/* SERVICES (6 cards) */}
       <ServicesOverview />
+
+      {/* HOW IT WORKS (3 steps) */}
+      <HowItWorks />
 
       {/* EARNINGS */}
       <EarningsProjection />

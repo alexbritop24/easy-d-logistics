@@ -1,29 +1,52 @@
+// src/components/HowItWorks.jsx
 export default function HowItWorks() {
+  const steps = [
+    {
+      step: "Step 1",
+      title: "Sign Up",
+      desc: "Fill out the quick onboarding form.",
+    },
+    {
+      step: "Step 2",
+      title: "We Find Loads",
+      desc: "We negotiate and book the best paying freight.",
+    },
+    {
+      step: "Step 3",
+      title: "You Drive",
+      desc: "You haul — we handle everything else.",
+    },
+  ];
+
   return (
-    <section className="py-20 bg-[var(--color-primary)] text-white">
-      <div className="max-w-6xl mx-auto text-center px-6">
+    <section className="bg-[var(--color-primary)] text-white py-10 md:py-16">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12">
+          How It Works
+        </h2>
 
-        <h2 className="text-3xl font-bold mb-10">How It Works</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+          {steps.map((s) => (
+            <div
+              key={s.title}
+              className="
+                p-6 md:p-8
+                bg-[var(--color-primary-softer)]
+                rounded-2xl
+                border border-white/15
+                transition
+                hover:border-[var(--color-accent)]
+              "
+            >
+              <div className="mx-auto mb-4 w-fit px-3 py-1 rounded-full text-sm font-semibold border border-white/15 text-white/80">
+                {s.step}
+              </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-          <div className="p-6 bg-[var(--color-primary-softer)] rounded-xl border border-[var(--color-accent)]">
-            <h3 className="text-xl font-semibold">1. Sign Up</h3>
-            <p className="text-gray-300 mt-2">Fill out the quick onboarding form.</p>
-          </div>
-
-          <div className="p-6 bg-[var(--color-primary-softer)] rounded-xl border border-[var(--color-accent)]">
-            <h3 className="text-xl font-semibold">2. We Find Loads</h3>
-            <p className="text-gray-300 mt-2">We negotiate and book the best paying freight.</p>
-          </div>
-
-          <div className="p-6 bg-[var(--color-primary-softer)] rounded-xl border border-[var(--color-accent)]">
-            <h3 className="text-xl font-semibold">3. You Drive</h3>
-            <p className="text-gray-300 mt-2">You haul — we handle everything else.</p>
-          </div>
-
+              <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+              <p className="text-white/70 leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
         </div>
-
       </div>
     </section>
   );
