@@ -1,19 +1,18 @@
 export default function EarningsProjection() {
   return (
-    <section className="py-24 bg-[var(--color-primary)] text-white">
+    <section className="bg-[var(--color-primary)] text-white py-12 md:py-20">
       <div className="max-w-5xl mx-auto text-center px-6">
-
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">
           Earnings Projection
         </h2>
 
-        <p className="text-white/70 mb-12">
+        <p className="text-white/70 mb-6 md:mb-12">
           Example weekly revenue for a single truck.
         </p>
 
         <div
           className="
-            p-10
+            p-6 md:p-10
             bg-[var(--color-primary-softer)]
             rounded-xl
             border
@@ -24,7 +23,7 @@ export default function EarningsProjection() {
             hover:border-[var(--color-accent)]
           "
         >
-          <h3 className="text-lg font-semibold mb-4">
+          <h3 className="text-lg font-semibold mb-3 md:mb-4">
             Estimated Weekly Revenue
           </h3>
 
@@ -32,11 +31,10 @@ export default function EarningsProjection() {
             $4,500 – $6,800+
           </p>
 
-          <p className="text-white/60 mt-4 text-sm">
+          <p className="text-white/60 mt-3 md:mt-4 text-sm">
             Estimates vary by equipment type, region, and availability.
           </p>
         </div>
-
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="pt-36 pb-24 bg-[var(--color-primary)] text-white">
+    <section className="bg-[var(--color-primary)] text-white pt-28 pb-16 md:pt-32 md:pb-20">
       <div className="max-w-6xl mx-auto text-center px-6">
 
         {/* Headline */}
@@ -18,40 +18,20 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-
-          {/* Primary CTA */}
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="/get-started"
-            className="
-              px-8 py-3
-              bg-[var(--color-accent)]
-              text-[var(--color-primary)]
-              font-semibold
-              rounded-lg
-              transition
-              hover:opacity-90
-            "
+            className="px-8 py-3 bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold rounded-lg hover:opacity-90 transition"
           >
             Start Dispatching Today
           </a>
 
-          {/* Secondary CTA */}
           <a
             href="/services"
-            className="
-              px-8 py-3
-              border border-white/30
-              rounded-lg
-              text-white
-              transition
-              hover:border-[var(--color-accent)]
-              hover:text-[var(--color-accent)]
-            "
+            className="px-8 py-3 border border-white/30 rounded-lg text-white hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition"
           >
             View Services
           </a>
-
         </div>
 
       </div>
