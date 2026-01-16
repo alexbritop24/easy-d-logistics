@@ -16,7 +16,7 @@ export default function TrustBadges() {
 
           <div className="p-5 md:p-8 bg-[var(--color-primary-softer)] rounded-xl border border-white/15 transition hover:border-[var(--color-accent)]">
             <h3 className="text-lg md:text-xl font-semibold mb-2 leading-tight">
-              Paperwork &amp; Compliance
+              Paperwork
             </h3>
             <p className="text-white/70 leading-relaxed text-sm md:text-base">
               We handle all broker + load paperwork.
