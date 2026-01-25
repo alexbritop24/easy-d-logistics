@@ -9,7 +9,7 @@ export default function CTABanner() {
         </h2>
 
         <p className="mt-4 text-base md:text-lg text-white/80 max-w-2xl mx-auto">
-          Join Easy D Logistics and get premium dispatching — without the stress.
+          Join Easy D Logistics and get premium dispatching, without the stress.
         </p>
 
         <div className="mt-6">

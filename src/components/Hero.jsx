@@ -21,23 +21,23 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto text-center px-6">
         {/* Headline */}
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-          Professional Dispatching for{" "}
+          Dispatching Solutions{" "}
           <span className="block text-[var(--color-accent)]">
-            Owner Operators & Small Fleets
+            That Scales With Your Fleet
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="mt-6 text-lg md:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed">
-          Keep your trucks loaded, earn more per mile, and eliminate paperwork stress.
-          We handle everything so you can stay focused on driving.
+          From owner operators to large trucking fleets, we handle dispatching,
+          rates, and paperwork so you can focus on the road
         </p>
 
         {/* CTAs */}
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
           {/* Primary CTA */}
           <a
-            href="/get-started"
+            href="/contact"
             className="
               px-8 py-3
               bg-[var(--color-accent)]
@@ -48,7 +48,7 @@ export default function Hero() {
               hover:opacity-90
             "
           >
-            Start Dispatching Today
+            Talk to a Dispatcher
           </a>
 
           {/* Secondary CTA */}

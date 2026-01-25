@@ -20,39 +20,99 @@ export default function Footer() {
           <div>
             <h3 className="text-lg md:text-xl font-bold mb-3">Quick Links</h3>
 
-            {/* On mobile: 2 columns to reduce height */}
-            <ul className="grid grid-cols-2 md:grid-cols-1 gap-y-2 text-sm md:text-base text-white/70">
-              <li><a href="/" className="hover:text-[var(--color-accent)] transition">Home</a></li>
-              <li><a href="/services" className="hover:text-[var(--color-accent)] transition">Services</a></li>
-              <li><a href="/pricing" className="hover:text-[var(--color-accent)] transition">Pricing</a></li>
-              <li><a href="/about" className="hover:text-[var(--color-accent)] transition">About</a></li>
-              <li><a href="/contact" className="hover:text-[var(--color-accent)] transition">Contact</a></li>
+            <ul className="grid grid-cols-2 md:grid-cols-1 gap-y-2 gap-x-6 text-sm md:text-base text-white/70">
+              <li>
+                <a href="/" className="hover:text-[var(--color-accent)] transition">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/services" className="hover:text-[var(--color-accent)] transition">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/pricing" className="hover:text-[var(--color-accent)] transition">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-[var(--color-accent)] transition">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-[var(--color-accent)] transition">
+                  Contact
+                </a>
+              </li>
+
+              {/* FAQ */}
+              <li>
+                <a href="/faq" className="hover:text-[var(--color-accent)] transition">
+                  FAQ
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact + CTA */}
           <div>
             <h3 className="text-lg md:text-xl font-bold mb-3">Contact</h3>
-            <ul className="space-y-2 text-sm md:text-base text-white/70">
-              <li>
-                <span className="font-semibold text-[var(--color-accent)]">Email:</span>{" "}
-                dispatch@easydlogistics.com
-              </li>
+
+            <ul className="space-y-2 text-sm md:text-base text-white/70 mb-5">
               <li>
                 <span className="font-semibold text-[var(--color-accent)]">Phone:</span>{" "}
-                (555) 123-4567
+                <a
+                  href="tel:+13852928031"
+                  className="hover:text-[var(--color-accent)] transition"
+                >
+                  385-292-8031
+                </a>
               </li>
+
+              <li>
+                <span className="font-semibold text-[var(--color-accent)]">Address:</span>{" "}
+                <a
+                  href="https://maps.google.com/?q=370+W+400+N+Suite+9+Provo+UT+84601"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--color-accent)] transition"
+                >
+                  370 W 400 N, Suite 9
+                  <br />
+                  Provo, UT 84601
+                </a>
+              </li>
+
               <li>
                 <span className="font-semibold text-[var(--color-accent)]">Hours:</span>{" "}
                 24/7 Dispatch Support
               </li>
             </ul>
+
+            <a
+              href="/contact"
+              className="
+                inline-block
+                mt-2
+                px-6
+                py-3
+                rounded-lg
+                font-semibold
+                bg-[var(--color-accent)]
+                text-[var(--color-primary)]
+                transition
+                hover:opacity-90
+              "
+            >
+              Talk to a Dispatcher
+            </a>
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="mt-8 border-t border-white/10 pt-5 text-center text-xs md:text-sm text-white/50">
-          © {new Date().getFullYear()} Easy D Logistics. All rights reserved.
+          © {new Date().getFullYear()} Apex Fusion Studios. All rights reserved.
         </div>
       </div>
     </footer>
