@@ -51,7 +51,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-block bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold px-6 py-3 rounded-md hover:opacity-90 transition"
               >
-                Talk to a Dispatcher
+                Contact Us
               </a>
             </div>
           </div>
