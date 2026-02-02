@@ -1,10 +1,13 @@
-// src/pages/Contact.jsx
 import { useState } from "react";
 import useSEO from "../hooks/useSEO";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 
 import contactHero from "../assets/dispatch-support-team.jpeg";
+
+function encode(data) {
+  return new URLSearchParams(data).toString();
+}
 
 export default function Contact() {
   useSEO({
@@ -15,36 +18,41 @@ export default function Contact() {
     ogImage: "/EasyD.png",
   });
 
-  // Address (single source of truth)
-  const ADDRESS_DISPLAY = "370 W 400 N, Suite 9, Provo, UT 84601";
-  const ADDRESS_MAPS_URL =
-    "https://www.google.com/maps/search/?api=1&query=370%20W%20400%20N%20Suite%209%20Provo%20UT%2084601";
-
   const [status, setStatus] = useState({ type: "idle", message: "" });
 
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus({ type: "loading", message: "Sending..." });
 
-    const form = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
+
     const payload = {
+      "form-name": "contact",
       name: form.get("name")?.toString().trim(),
       email: form.get("email")?.toString().trim(),
+      phone: form.get("phone")?.toString().trim(),
       message: form.get("message")?.toString().trim(),
       company: form.get("company")?.toString().trim(), // honeypot
     };
 
+    // Bot check
+    if (payload.company) {
+      formEl.reset();
+      setStatus({ type: "success", message: "Message sent. We’ll reach out ASAP." });
+      return;
+    }
+
     try {
-      const res = await fetch("/.netlify/functions/contact", {
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload),
       });
 
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data?.error || "Failed to send message");
+      if (!res.ok) throw new Error("Failed to send message");
 
-      e.currentTarget.reset();
+      formEl.reset();
       setStatus({ type: "success", message: "Message sent. We’ll reach out ASAP." });
     } catch (err) {
       setStatus({
@@ -54,29 +62,15 @@ export default function Contact() {
     }
   }
 
-  const chips = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.08 } },
-  };
-
-  const chipItem = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
-
   return (
     <main className="bg-[var(--color-primary)] text-white">
+      {/* HERO */}
       <section
         className="relative overflow-hidden"
         style={{
           backgroundImage: `url(${contactHero})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="absolute inset-0 bg-[var(--color-primary)]/75" />
@@ -91,102 +85,68 @@ export default function Contact() {
 
           <Reveal y={14} delay={0.05}>
             <p className="mt-4 text-white/85 text-lg max-w-2xl">
-              We’re here to help 24/7. Reach out anytime — we respond fast and keep it simple.
+              We’re here 24/7. Call us or send a message — we respond fast.
             </p>
           </Reveal>
 
-          {/* Quick chips */}
-          <motion.div
-            variants={chips}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }}
-            className="mt-8 flex flex-wrap gap-3"
-          >
-            <motion.a
-              variants={chipItem}
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
               href="tel:+13852928031"
               className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm hover:border-[var(--color-accent)] transition"
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.15 }}
             >
               Phone: 385-292-8031
-            </motion.a>
+            </a>
 
-            <motion.a
-              variants={chipItem}
-              href={ADDRESS_MAPS_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm hover:border-[var(--color-accent)] transition"
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.15 }}
-              title="Open in Google Maps"
-            >
-              Address: {ADDRESS_DISPLAY}
-            </motion.a>
-
-            <motion.span
-              variants={chipItem}
-              className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm"
-            >
+            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm">
               Support: 24/7
-            </motion.span>
-          </motion.div>
+            </span>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-[var(--color-primary)]">
+      {/* CONTENT */}
+      <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+          {/* LEFT */}
           <div>
             <Reveal y={16}>
-              <h2 className="text-2xl font-bold mb-4">Talk to a Dispatcher</h2>
+              <h2 className="text-2xl font-bold mb-4">Contact Easy D Logistics</h2>
             </Reveal>
 
             <Reveal y={16} delay={0.05}>
-              <p className="text-white/75 leading-relaxed mb-6">
+              <p className="text-white/75 leading-relaxed mb-8">
                 Tell us what you haul, where you’re based, and what lanes you prefer.
-                We’ll reply with next steps and pricing that fits your operation.
+                We’ll follow up with next steps that fit your operation.
               </p>
             </Reveal>
 
-            {/* Address block (trust + clarity) */}
-            <Reveal y={14} delay={0.07}>
-              <a
-                href={ADDRESS_MAPS_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-start gap-2 text-white/75 hover:text-[var(--color-accent)] transition mb-8"
-                title="Open in Google Maps"
-              >
-                <span className="text-white/60">📍</span>
-                <span>
-                  <span className="font-semibold text-white/80">Office:</span>{" "}
-                  {ADDRESS_DISPLAY}
-                </span>
-              </a>
-            </Reveal>
-
             <Reveal y={16} delay={0.08}>
-              <motion.div
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.18 }}
-                className="p-6 rounded-xl bg-[var(--color-primary-softer)] border border-white/10"
-              >
-                <div className="text-sm text-white/70">What to include</div>
+              <div className="p-6 rounded-xl bg-[var(--color-primary-softer)] border border-white/10">
+                <div className="text-sm text-white/70">Helpful info to include</div>
                 <ul className="mt-3 space-y-2 text-white/80">
-                  <li>• Equipment type (Dry Van / Flatbed / Hotshot / Reefer)</li>
+                  <li>• Equipment type</li>
                   <li>• Home base city/state</li>
-                  <li>• Preferred lanes / regions</li>
+                  <li>• Preferred lanes</li>
                   <li>• When you want to start</li>
                 </ul>
-              </motion.div>
+              </div>
             </Reveal>
           </div>
 
+          {/* FORM */}
           <Reveal y={18} delay={0.06}>
             <div className="p-6 rounded-xl bg-[var(--color-primary-softer)] border border-white/10">
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="company"
+                onSubmit={handleSubmit}
+                className="space-y-5"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+
+                {/* Honeypot */}
                 <input
                   name="company"
                   type="text"
@@ -200,7 +160,7 @@ export default function Contact() {
                   type="text"
                   placeholder="Full Name"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 outline-none focus:border-[var(--color-accent)]"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-accent)] outline-none"
                 />
 
                 <input
@@ -208,15 +168,23 @@ export default function Contact() {
                   type="email"
                   placeholder="Email"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 outline-none focus:border-[var(--color-accent)]"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-accent)] outline-none"
+                />
+
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="Phone Number"
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-accent)] outline-none"
                 />
 
                 <textarea
                   name="message"
-                  placeholder="Your Message"
                   rows="6"
+                  placeholder="Your Message"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 outline-none focus:border-[var(--color-accent)]"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-primary)] border border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-accent)] outline-none"
                 />
 
                 <motion.button
@@ -224,7 +192,7 @@ export default function Contact() {
                   disabled={status.type === "loading"}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.15 }}
-                  className="w-full py-3 rounded-lg font-semibold bg-[var(--color-accent)] text-[var(--color-primary)] transition hover:opacity-90 disabled:opacity-60"
+                  className="w-full py-3 rounded-lg font-semibold bg-[var(--color-accent)] text-[var(--color-primary)] hover:opacity-90 disabled:opacity-60"
                 >
                   {status.type === "loading" ? "Sending..." : "Send Message"}
                 </motion.button>
@@ -234,9 +202,7 @@ export default function Contact() {
                     className={`text-sm ${
                       status.type === "success"
                         ? "text-green-300"
-                        : status.type === "error"
-                        ? "text-red-300"
-                        : "text-white/70"
+                        : "text-red-300"
                     }`}
                   >
                     {status.message}
@@ -244,7 +210,7 @@ export default function Contact() {
                 )}
 
                 <p className="text-xs text-white/45">
-                  Note: This form sends email via our secure serverless function.
+                  This form securely emails submissions to info@easydlogistics.com.
                 </p>
               </form>
             </div>

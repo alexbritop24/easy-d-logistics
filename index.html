@@ -17,8 +17,32 @@
   </head>
 
   <body style="background-color: var(--color-primary); color: var(--color-text-primary);">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <div id="root"></div>
 
+    <!-- ✅ Netlify Forms SPA fallback (hidden, for build-time detection only) -->
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="company" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="phone" type="tel" />
+      <textarea name="message"></textarea>
+      <input name="company" type="text" />
+    </form>
+
+    <form name="get-started" method="POST" data-netlify="true" data-netlify-honeypot="company" hidden>
+      <input type="hidden" name="form-name" value="get-started" />
+      <input name="name" type="text" />
+      <input name="phone" type="tel" />
+      <input name="email" type="email" />
+      <input name="mcNumber" type="text" />
+      <input name="truckType" type="text" />
+      <input name="equipment" type="text" />
+      <input name="regions" type="text" />
+      <input name="revenueGoal" type="text" />
+      <input name="company" type="text" />
+    </form>
+    <!-- ✅ end fallback -->
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

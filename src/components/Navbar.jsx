@@ -134,7 +134,7 @@ export default function Navbar() {
               transition hover:opacity-90
             "
           >
-            Talk to a Dispatcher
+            Contact Us
           </motion.a>
         </div>
 
@@ -234,7 +234,7 @@ export default function Navbar() {
               className="block text-center py-3 rounded-lg font-semibold bg-[var(--color-accent)] text-[var(--color-primary)]"
               onClick={() => setMenuOpen(false)}
             >
-              Talk to a Dispatcher
+              Contact Us
             </motion.a>
           </motion.div>
         )}

@@ -83,7 +83,7 @@ export default function Pricing() {
                     transition hover:opacity-90
                   "
                 >
-                  Talk to a Dispatcher
+                  Contact Us
                 </a>
 
                 {/* Secondary CTA (low-risk visibility for Get Started route) */}

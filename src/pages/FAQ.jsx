@@ -129,7 +129,7 @@ export default function FAQ() {
               href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-[var(--color-accent)] text-[var(--color-primary)] transition hover:opacity-90"
             >
-              Talk to a Dispatcher
+              Contact Us
             </a>
           </div>
         </Reveal>

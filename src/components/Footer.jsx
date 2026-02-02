@@ -106,7 +106,7 @@ export default function Footer() {
                 hover:opacity-90
               "
             >
-              Talk to a Dispatcher
+              Contact Us
             </a>
           </div>
         </div>

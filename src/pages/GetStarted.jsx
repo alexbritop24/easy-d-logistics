@@ -1,8 +1,11 @@
-// src/pages/GetStarted.jsx
 import { useState } from "react";
 import useSEO from "../hooks/useSEO";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
+
+function encode(data) {
+  return new URLSearchParams(data).toString();
+}
 
 export default function GetStarted() {
   useSEO({
@@ -38,41 +41,33 @@ export default function GetStarted() {
     e.preventDefault();
     setStatus({ type: "loading", message: "Sending..." });
 
-    // If bot filled honeypot, silently succeed (no email)
+    // Honeypot filled => bot; succeed silently
     if (form.company?.trim()) {
       setStatus({ type: "success", message: "Submitted. We’ll reach out ASAP." });
       return;
     }
 
-    const message = `
-Get Started Lead
-
-Name: ${form.name}
-Phone: ${form.phone}
-Email: ${form.email}
-MC Number: ${form.mcNumber || "N/A"}
-Truck Type: ${form.truckType}
-Equipment: ${form.equipment}
-Preferred Regions: ${form.regions}
-Weekly Revenue Goal: ${form.revenueGoal}
-`.trim();
-
     const payload = {
-      name: form.name?.trim(),
-      email: form.email?.trim(),
-      message,
-      company: form.company?.trim(), // honeypot
+      "form-name": "get-started",
+      name: form.name.trim(),
+      phone: form.phone.trim(),
+      email: form.email.trim(),
+      mcNumber: form.mcNumber.trim(),
+      truckType: form.truckType.trim(),
+      equipment: form.equipment.trim(),
+      regions: form.regions.trim(),
+      revenueGoal: form.revenueGoal.trim(),
+      company: form.company.trim(), // honeypot
     };
 
     try {
-      const res = await fetch("/.netlify/functions/contact", {
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload),
       });
 
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data?.error || "Failed to submit form");
+      if (!res.ok) throw new Error("Failed to submit form");
 
       setForm({
         name: "",
@@ -121,6 +116,10 @@ Weekly Revenue Goal: ${form.revenueGoal}
 
         <Reveal y={18} delay={0.08}>
           <form
+            name="get-started"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="company"
             onSubmit={submit}
             className="
               p-8
@@ -130,6 +129,8 @@ Weekly Revenue Goal: ${form.revenueGoal}
               space-y-6
             "
           >
+            <input type="hidden" name="form-name" value="get-started" />
+
             {/* Honeypot */}
             <input
               name="company"
