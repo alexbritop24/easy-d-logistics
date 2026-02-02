@@ -48,7 +48,7 @@ export default function Hero() {
               hover:opacity-90
             "
           >
-            Talk to a Dispatcher
+            Contact Us
           </a>
 
           {/* Secondary CTA */}
