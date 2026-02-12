@@ -54,10 +54,14 @@ export default function Navbar() {
       className="w-full fixed top-0 left-0 z-50 bg-[var(--color-primary)] shadow-lg"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <a href="/" className="text-2xl font-bold tracking-wide text-white">
-          Easy D <span className="text-[var(--color-accent)]">Logistics</span>
-        </a>
+        {/* Logo */}       
+         <a href="/" className="flex items-center">
+         <img
+         src="/easy-d-logo.png"
+         alt="Easy D Logistics Logo"
+         className="h-10 md:h-12 w-auto object-contain"
+          />
+         </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 text-white font-medium">

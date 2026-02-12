@@ -5,12 +5,19 @@ export default function Footer() {
     <footer className="bg-[var(--color-primary-softer)] text-white mt-12">
       <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          
           {/* Branding */}
           <div>
-            <h2 className="text-xl md:text-2xl font-bold">
-              Easy D <span className="text-[var(--color-accent)]">Logistics</span>
-            </h2>
-            <p className="mt-3 text-sm md:text-base text-white/70 leading-relaxed">
+            <a href="/" className="inline-flex items-center gap-3">
+            <img
+             src="/easy-d-logo.png"
+             alt="Easy D Logistics"
+             className="h-10 w-auto"
+             loading="lazy"
+             />
+            </a>
+
+            <p className="mt-4 text-sm md:text-base text-white/70 leading-relaxed">
               Professional dispatching services for owner-operators and small fleets.
               We keep your wheels turning and earnings growing.
             </p>
@@ -46,8 +53,6 @@ export default function Footer() {
                   Contact
                 </a>
               </li>
-
-              {/* FAQ */}
               <li>
                 <a href="/faq" className="hover:text-[var(--color-accent)] transition">
                   FAQ

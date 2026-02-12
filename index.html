@@ -4,22 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Primary Title (fallback, useSEO overrides per page) -->
     <title>Easy D Logistics</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
-    <!-- SEO Description -->
+    <!-- Base Description (fallback) -->
     <meta
       name="description"
       content="Easy D Logistics offers professional dispatching services for owner-operators and small fleets. Maximize earnings, reduce stress, and stay on the road."
     />
+
+    <!-- Theme Color (mobile browser UI color) -->
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/easy-d-logo.png" />
+
+    <!-- Open Graph Default (fallback) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Easy D Logistics" />
+    <meta property="og:image" content="https://easydlogistics.com/easy-d-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
   </head>
 
   <body style="background-color: var(--color-primary); color: var(--color-text-primary);">
     <div id="root"></div>
 
-    <!-- ✅ Netlify Forms SPA fallback (hidden, for build-time detection only) -->
+    <!-- Netlify Forms SPA fallback (required for detection) -->
     <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="company" hidden>
       <input type="hidden" name="form-name" value="contact" />
       <input name="name" type="text" />
@@ -41,7 +57,6 @@
       <input name="revenueGoal" type="text" />
       <input name="company" type="text" />
     </form>
-    <!-- ✅ end fallback -->
 
     <script type="module" src="/src/main.jsx"></script>
   </body>

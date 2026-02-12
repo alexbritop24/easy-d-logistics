@@ -7,13 +7,11 @@ import Reveal from "../components/Reveal";
 export default function Pricing() {
   // SEO — runs when Pricing page renders
   useSEO({
-    title: "Pricing | Easy D Logistics Dispatching",
-    description:
-      "Simple dispatch pricing for owner-operators and small fleets: Starter 6%, Pro 7% (recommended), Premium 8%. Fleet support available.",
-    path: "/pricing",
-    ogImage: "/EasyD.png",
-  });
-
+  title: "Pricing | Easy D Logistics Dispatching",
+  description: "...",
+  path: "/pricing",
+  ogImage: "https://easydlogistics.com/easy-d-logo.png",
+   });
   const plans = [
     {
       title: "Starter",
