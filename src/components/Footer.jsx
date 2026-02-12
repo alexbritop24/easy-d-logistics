@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <a href="/" className="inline-flex items-center gap-3">
             <img
-             src="/easy-d-logo.png"
+             src="/easy-d-logo-navbar.png"
              alt="Easy D Logistics"
              className="h-10 w-auto"
              loading="lazy"
