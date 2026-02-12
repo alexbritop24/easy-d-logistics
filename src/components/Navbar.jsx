@@ -57,7 +57,7 @@ export default function Navbar() {
         {/* Logo */}       
          <a href="/" className="flex items-center">
          <img
-         src="/easy-d-logo.png"
+         src="/easy-d-logo-navbar.png"
          alt="Easy D Logistics Logo"
          className="h-10 md:h-12 w-auto object-contain"
           />
