@@ -9,7 +9,6 @@ import EarningsProjection from "../components/EarningsProjection";
 import Testimonials from "../components/Testimonials";
 
 export default function Home() {
-  // SEO — runs when Home page renders
   useSEO({
     title: "Easy D Logistics | 24/7 Dispatching for Owner-Operators & Fleets",
     description:
@@ -54,6 +53,33 @@ export default function Home() {
                 Contact Us
               </a>
             </div>
+          </div>
+        </section>
+      </Reveal>
+
+      {/* SECOND CTA STRIP (brand colors only) */}
+      <Reveal y={18} delay={0.14}>
+        <section className="bg-[var(--color-primary-softer)] text-white">
+          <div className="max-w-6xl mx-auto px-6 py-12 md:py-14 text-center">
+
+            <h2 className="text-3xl md:text-5xl font-extrabold italic leading-tight">
+              Let Us Handle The Loads
+            </h2>
+
+            <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto font-medium">
+              Easy D Logistics negotiates with brokers, secures high-paying loads,
+              and handles paperwork so you can stay focused on driving.
+            </p>
+
+            <div className="mt-8">
+              <a
+                href="/contact"
+                className="inline-block px-8 py-4 rounded-xl font-bold bg-[var(--color-accent)] text-[var(--color-primary)] hover:opacity-90 transition"
+              >
+                Start Dispatching Today
+              </a>
+            </div>
+
           </div>
         </section>
       </Reveal>
