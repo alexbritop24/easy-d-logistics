@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 // Components
 import Navbar from "./components/Navbar.jsx";
@@ -13,14 +14,31 @@ import GetStarted from "./pages/GetStarted.jsx";
 import Contact from "./pages/Contact.jsx";
 import FAQ from "./pages/FAQ.jsx";
 
+/* Scroll to top on route change */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // no smooth → feels faster + more professional
+    });
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
-    <>
+    <div className="bg-[var(--color-primary)] text-white min-h-screen flex flex-col">
+      {/* Scroll reset */}
+      <ScrollToTop />
+
       {/* Navbar */}
       <Navbar />
 
       {/* Main Content */}
-      <div className="pt-16">
+      <main className="pt-16 flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -30,11 +48,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>
-      </div>
+      </main>
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,4 @@
 // src/components/Testimonials.jsx
-// Purpose: Add consistent scroll-reveal + staggered card entrance + subtle hover lift (matches other sections).
 
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
@@ -10,16 +9,19 @@ export default function Testimonials() {
       quote:
         "Best dispatch service I’ve ever used, loads are consistent and pay great.",
       name: "J. Martinez",
+      role: "Owner-Operator",
     },
     {
       quote:
         "These guys negotiate better than anyone. My revenue jumped immediately.",
       name: "A. Brown",
+      role: "Fleet Driver",
     },
     {
       quote:
         "24/7 support is real, they always help no matter the time of day.",
       name: "D. Williams",
+      role: "Independent Driver",
     },
   ];
 
@@ -38,15 +40,27 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-[var(--color-primary)] text-white">
+    <section className="py-20 md:py-24 bg-[var(--color-primary)] text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-4">What Drivers Say</h2>
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/75">
+            Trusted By Real Drivers
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.04}>
+          <h2 className="mt-6 text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            What Drivers
+            <span className="block text-[var(--color-accent)]">
+              Say About Us
+            </span>
+          </h2>
         </Reveal>
 
         <Reveal delay={0.08}>
-          <p className="text-white/70 mb-12 max-w-2xl mx-auto">
-            Real feedback from owner-operators and fleet managers we work with daily.
+          <p className="mt-5 text-white/72 mb-12 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            Real feedback from owner-operators and drivers who rely on us for
+            dispatch support, broker communication, and load coordination.
           </p>
         </Reveal>
 
@@ -55,30 +69,44 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
         >
-          {testimonials.map(({ quote, name }) => (
+          {testimonials.map(({ quote, name, role }) => (
             <motion.div
               key={name}
               variants={item}
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -5 }}
               transition={{ duration: 0.18 }}
               className="
                 h-full
-                p-6 md:p-8
-                bg-[var(--color-primary-softer)]
                 rounded-2xl
-                border border-white/15
+                border border-white/10
+                bg-[var(--color-primary-softer)]
+                p-7 md:p-8
+                shadow-[var(--shadow-card)]
                 transition
-                hover:border-[var(--color-accent)]
-                hover:shadow-[0_0_0_1px_var(--color-accent)]
+                hover:border-[var(--color-border-strong)]
               "
             >
-              <p className="text-white/80 leading-relaxed">“{quote}”</p>
+              <div className="mb-5 flex justify-center">
+                <div className="h-11 w-11 rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center text-[var(--color-accent)] text-xl font-bold">
+                  “
+                </div>
+              </div>
 
-              <h3 className="mt-6 font-semibold text-[var(--color-accent)]">
-                {name}
-              </h3>
+              <p className="text-white/78 leading-relaxed text-base md:text-lg">
+                {quote}
+              </p>
+
+              <div className="mt-8 pt-5 border-t border-white/10">
+                <h3 className="font-semibold text-[var(--color-accent)] text-base md:text-lg">
+                  {name}
+                </h3>
+
+                <p className="mt-1 text-sm text-white/55">
+                  {role}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

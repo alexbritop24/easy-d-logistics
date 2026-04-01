@@ -11,99 +11,179 @@ export default function About() {
     description:
       "Learn about Easy D Logistics — dispatch support built for owner-operators and small fleets. Drivers first, strong rates, less admin stress.",
     path: "/about",
-    ogImage: "/EasyD.png",
+    ogImage: "/easy-d-logo.png",
   });
 
+  const reasons = [
+    "Transparent communication at all times",
+    "Strong negotiation for top-paying loads",
+    "24/7 support with real dispatchers",
+    "Paperwork handled for you",
+    "Focus on growing driver revenue consistently",
+  ];
+
   return (
-    <section className="bg-[var(--color-primary)] text-white py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Page Header */}
-        <header className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <Reveal y={18}>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              About Easy D Logistics
-            </h1>
-          </Reveal>
+    <main className="bg-[var(--color-primary)] text-white">
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Page Header */}
+          <header className="text-center max-w-3xl mx-auto mb-14 md:mb-18">
+            <Reveal y={18}>
+              <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-white/75">
+                About Easy D Logistics
+              </div>
+            </Reveal>
 
-          <Reveal y={14} delay={0.05}>
-            <p className="mt-4 text-white/80 text-base md:text-lg leading-relaxed">
-              Dispatch support built for owner-operators and small fleets — focused
-              on uptime, strong rates, and less admin stress.
-            </p>
-          </Reveal>
-        </header>
+            <Reveal y={18} delay={0.04}>
+              <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                Dispatch Support Built
+                <span className="block text-[var(--color-accent)]">
+                  Around The Driver
+                </span>
+              </h1>
+            </Reveal>
 
-        {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left */}
-          <div>
-            <Reveal y={16}>
-              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                Easy D Logistics is committed to helping truckers maximize earnings,
-                reduce downtime, and eliminate administrative stress. We assist
-                owner-operators and small fleets with reliable, 24/7 dispatching
-                services that prioritize integrity and transparency.
+            <Reveal y={14} delay={0.08}>
+              <p className="mt-5 text-white/78 text-base md:text-lg leading-relaxed">
+                Easy D Logistics helps owner-operators and small fleets reduce
+                downtime, improve load quality, and stay focused on the road
+                while we handle dispatching, broker communication, and admin work.
               </p>
             </Reveal>
+          </header>
 
-            <Reveal y={16} delay={0.05}>
-              <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-3">
-                Our Mission
-              </h2>
-              <p className="text-gray-300 mb-6">
-                Our mission is to provide top-tier dispatching services that build
-                long-term partnerships with drivers and help them grow sustainably
-                in a competitive market.
-              </p>
-            </Reveal>
+          {/* Content Grid */}
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-stretch">
+            {/* Left */}
+            <div className="space-y-6">
+              <Reveal y={16}>
+                <div className="rounded-2xl border border-white/10 bg-[var(--color-primary-softer)] p-7 shadow-[var(--shadow-card)]">
+                  <h2 className="text-2xl font-bold text-white mb-4">
+                    Who We Are
+                  </h2>
 
-            <Reveal y={16} delay={0.08}>
-              <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-3">
-                Why Choose Us?
-              </h2>
+                  <p className="text-white/75 text-lg leading-relaxed">
+                    Easy D Logistics is committed to helping truckers maximize
+                    earnings, reduce downtime, and eliminate administrative
+                    stress. We assist owner-operators and small fleets with
+                    reliable, 24/7 dispatching services that prioritize
+                    integrity, consistency, and real support.
+                  </p>
+                </div>
+              </Reveal>
 
-              <ul className="text-gray-300 space-y-3 mb-8">
-                <li>• Transparent communication at all times</li>
-                <li>• Strong negotiation for top-paying loads</li>
-                <li>• 24/7 support with real dispatchers</li>
-                <li>• Paperwork handled for you</li>
-                <li>• Focus on growing driver revenue consistently</li>
-              </ul>
-            </Reveal>
+              <Reveal y={16} delay={0.05}>
+                <div className="rounded-2xl border border-white/10 bg-[var(--color-primary-softer)] p-7 shadow-[var(--shadow-card)]">
+                  <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
+                    Our Mission
+                  </h2>
 
-            <Reveal y={16} delay={0.1}>
+                  <p className="text-white/75 leading-relaxed">
+                    Our mission is to provide top-tier dispatching services that
+                    build long-term partnerships with drivers and help them grow
+                    sustainably in a competitive market.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal y={16} delay={0.08}>
+                <div className="rounded-2xl border border-white/10 bg-[var(--color-primary-softer)] p-7 shadow-[var(--shadow-card)]">
+                  <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-5">
+                    Why Choose Us
+                  </h2>
+
+                  <ul className="space-y-3">
+                    {reasons.map((reason) => (
+                      <li
+                        key={reason}
+                        className="flex items-start gap-3 text-white/78"
+                      >
+                        <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--color-accent)] shrink-0" />
+                        <span>{reason}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+
+              <Reveal y={16} delay={0.1}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.18 }}
+                  className="rounded-2xl border border-[var(--color-border-strong)] bg-white/[0.03] p-7 shadow-[var(--shadow-accent)]"
+                >
+                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
+                    Drivers first — always.
+                  </h3>
+
+                  <p className="text-white/72 text-sm md:text-base leading-relaxed">
+                    Everything we do is built around supporting truckers,
+                    protecting their time, and helping them move more profitably.
+                  </p>
+                </motion.div>
+              </Reveal>
+            </div>
+
+            {/* Right */}
+            <Reveal y={18} delay={0.06}>
               <motion.div
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.18 }}
-                className="p-6 bg-[var(--color-primary-softer)] border border-[var(--color-accent)] rounded-xl"
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.2 }}
+                className="relative h-full min-h-[420px] rounded-3xl overflow-hidden border border-white/10 shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
-                  “Drivers first — always.”
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  Everything we do is built around supporting truckers and maximizing
-                  their success.
-                </p>
+                <img
+                  src={aboutImage}
+                  alt="Easy D Logistics dispatch support team"
+                  className="w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full border border-white/15 bg-white/10 backdrop-blur-sm text-xs font-semibold tracking-wide text-white/90">
+                    Real Dispatch Support
+                  </div>
+
+                  <p className="mt-4 max-w-md text-white/85 text-sm md:text-base leading-relaxed">
+                    Built for owner-operators and small fleets who want better
+                    rates, fewer headaches, and a dispatch partner they can rely on.
+                  </p>
+                </div>
               </motion.div>
             </Reveal>
           </div>
-
-          {/* Right */}
-          <Reveal y={18} delay={0.06}>
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.2 }}
-              className="rounded-xl overflow-hidden border border-white/10 shadow-lg"
-            >
-              <img
-                src={aboutImage}
-                alt="Easy D Logistics dispatch support team"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          </Reveal>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Bottom CTA */}
+      <Reveal y={18} delay={0.12}>
+        <section className="px-6 pb-20">
+          <div className="max-w-6xl mx-auto rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] px-8 py-10 md:px-12 md:py-12 shadow-[var(--shadow-card)]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-extrabold leading-tight">
+                  Ready To Work With A
+                  <span className="block text-[var(--color-accent)]">
+                    Reliable Dispatch Partner?
+                  </span>
+                </h2>
+
+                <p className="mt-3 text-white/75 max-w-2xl">
+                  Let us help you stay loaded, reduce stress, and keep your
+                  operation moving with confidence.
+                </p>
+              </div>
+
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-xl font-semibold bg-[var(--color-accent)] text-[var(--color-primary)] hover:opacity-90 transition"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </section>
+      </Reveal>
+    </main>
   );
 }

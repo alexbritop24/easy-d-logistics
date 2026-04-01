@@ -1,5 +1,4 @@
 // src/components/HowItWorks.jsx
-// Purpose: Add staggered scroll-reveal animations (match ServicesOverview style) + keep layout identical.
 
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
@@ -7,19 +6,24 @@ import Reveal from "./Reveal";
 export default function HowItWorks() {
   const steps = [
     {
-      step: "Step 1",
-      title: "Sign Up",
-      desc: "Fill out the quick onboarding form.",
+      step: "01",
+      title: "Contact Dispatch",
+      desc: "Reach out and tell us your truck type, home base, and preferred lanes so we can understand your operation.",
     },
     {
-      step: "Step 2",
+      step: "02",
       title: "We Find Loads",
-      desc: "We negotiate and book the best paying freight.",
+      desc: "We search, qualify, and line up freight opportunities that match your equipment and route preferences.",
     },
     {
-      step: "Step 3",
-      title: "You Drive",
-      desc: "You haul — we handle everything else.",
+      step: "03",
+      title: "We Negotiate Rates",
+      desc: "Our team handles broker communication and rate negotiation to help you secure stronger-paying loads.",
+    },
+    {
+      step: "04",
+      title: "You Drive & Get Paid",
+      desc: "You stay focused on the road while we manage dispatch updates, paperwork coordination, and support.",
     },
   ];
 
@@ -40,41 +44,72 @@ export default function HowItWorks() {
   };
 
   return (
-    <section className="bg-[var(--color-primary)] text-white py-10 md:py-16">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <Reveal>
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12">
-            How It Works
-          </h2>
-        </Reveal>
+    <section className="bg-[var(--color-primary)] text-white py-14 md:py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto">
+          <Reveal>
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/75">
+              Simple Process. Real Support.
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.04}>
+            <h2 className="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+              How Dispatching
+              <span className="block text-[var(--color-accent)]">
+                Works With Easy D
+              </span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="mt-5 text-base md:text-lg text-white/75 leading-relaxed">
+              We keep the process simple, clear, and efficient so you can stay
+              focused on driving while we handle the coordination behind the scenes.
+            </p>
+          </Reveal>
+        </div>
 
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8"
+          className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7"
         >
           {steps.map((s) => (
             <motion.div
               key={s.title}
               variants={item}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.18 }}
               className="
-                p-6 md:p-8
+                relative p-6 md:p-7
                 bg-[var(--color-primary-softer)]
                 rounded-2xl
-                border border-white/15
+                border border-white/10
+                shadow-[var(--shadow-card)]
                 transition
-                hover:border-[var(--color-accent)]
-                hover:shadow-[0_0_0_1px_var(--color-accent)]
+                hover:border-[var(--color-border-strong)]
               "
             >
-              <div className="mx-auto mb-4 w-fit px-3 py-1 rounded-full text-sm font-semibold border border-white/15 text-white/80">
-                {s.step}
+              <div className="flex items-center justify-between mb-5">
+                <div className="text-3xl md:text-4xl font-extrabold text-[var(--color-accent)] tracking-tight">
+                  {s.step}
+                </div>
+
+                <div className="h-10 w-10 rounded-full border border-white/10 bg-white/[0.03] flex items-center justify-center text-white/70 text-sm font-semibold">
+                  →
+                </div>
               </div>
 
-              <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-              <p className="text-white/70 leading-relaxed">{s.desc}</p>
+              <h3 className="text-xl font-semibold mb-3 leading-snug">
+                {s.title}
+              </h3>
+
+              <p className="text-white/72 leading-relaxed text-sm md:text-base">
+                {s.desc}
+              </p>
             </motion.div>
           ))}
         </motion.div>
