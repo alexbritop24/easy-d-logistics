@@ -22,16 +22,24 @@ export default function Home() {
       <Hero />
 
       {/* SERVICES */}
-      <ServicesOverview />
+      <Reveal y={28}>
+        <ServicesOverview />
+      </Reveal>
 
       {/* HOW IT WORKS */}
-      <HowItWorks />
+      <Reveal y={28} delay={0.04}>
+        <HowItWorks />
+      </Reveal>
 
       {/* EARNINGS */}
-      <EarningsProjection />
+      <Reveal y={28} delay={0.06}>
+        <EarningsProjection />
+      </Reveal>
 
       {/* TESTIMONIALS */}
-      <Testimonials />
+      <Reveal y={28} delay={0.08}>
+        <Testimonials />
+      </Reveal>
 
       {/* CTA BANNER */}
       <Reveal y={18} delay={0.12}>
@@ -57,12 +65,11 @@ export default function Home() {
         </section>
       </Reveal>
 
-      {/* SECOND CTA STRIP (brand colors only) */}
-      <Reveal y={18} delay={0.14}>
+      {/* SECOND CTA STRIP */}
+      <Reveal y={22} delay={0.14}>
         <section className="bg-[var(--color-primary-softer)] text-white">
           <div className="max-w-6xl mx-auto px-6 py-12 md:py-14 text-center">
-
-            <h2 className="text-3xl md:text-5xl font-extrabold italic leading-tight">
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
               Let Us Handle The Loads
             </h2>
 
@@ -79,7 +86,6 @@ export default function Home() {
                 Start Dispatching Today
               </a>
             </div>
-
           </div>
         </section>
       </Reveal>

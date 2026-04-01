@@ -1,6 +1,5 @@
-// src/components/Hero.jsx
 import { motion } from "framer-motion";
-import heroBg from "../assets/dispatch-center.jpeg";
+import heroBg from "../assets/dispatch-team-portrait.jpeg";
 
 export default function Hero() {
   return (
@@ -23,6 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(147,197,253,0.12),transparent_38%)]" />
 
       <div className="relative max-w-6xl mx-auto text-center px-6">
+        
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -105,20 +105,33 @@ export default function Hero() {
           className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto"
         >
           <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-6 py-5">
-            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">24/7</div>
-            <div className="mt-1 text-sm md:text-base text-white/75">Dispatcher availability</div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">
+              24/7
+            </div>
+            <div className="mt-1 text-sm md:text-base text-white/75">
+              Dispatcher availability
+            </div>
           </div>
 
           <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-6 py-5">
-            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">Fast</div>
-            <div className="mt-1 text-sm md:text-base text-white/75">Broker communication & updates</div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">
+              Fast
+            </div>
+            <div className="mt-1 text-sm md:text-base text-white/75">
+              Broker communication & updates
+            </div>
           </div>
 
           <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-6 py-5">
-            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">Reliable</div>
-            <div className="mt-1 text-sm md:text-base text-white/75">Paperwork and load support</div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">
+              Reliable
+            </div>
+            <div className="mt-1 text-sm md:text-base text-white/75">
+              Paperwork and load support
+            </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

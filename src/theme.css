@@ -1,10 +1,25 @@
 :root {
-  /* Core brand colors */
-  --color-primary: #0f1f3a;        /* main dark navy */
-  --color-primary-softer: #172a4f; /* card / section contrast */
-  --color-accent: #9cc9e6;         /* light blue accent */
+  /* Premium dark system */
+  --color-primary: #05070b;         /* near-black main background */
+  --color-primary-softer: #0d1118;  /* elevated surface / cards / secondary sections */
+  --color-primary-muted: #090d14;   /* body background / subtle section variation */
+
+  /* Accent */
+  --color-accent: #8fc7ee;          /* refined sky blue */
+  --color-accent-strong: #5fb7f2;   /* stronger hover / highlight */
 
   /* Text */
+  --color-text-main: #f8fafc;
   --color-text-primary: #ffffff;
-  --color-text-muted: #cbd5e1;
+  --color-text-muted: #a9b4c7;
+
+  /* Supporting surfaces */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(143, 199, 238, 0.32);
+  --color-surface-glass: rgba(255, 255, 255, 0.04);
+
+  /* Shadows / glow */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.32);
+  --shadow-accent: 0 0 0 1px rgba(143, 199, 238, 0.22), 0 10px 30px rgba(95, 183, 242, 0.08);
 }
