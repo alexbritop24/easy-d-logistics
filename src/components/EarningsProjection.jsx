@@ -47,7 +47,7 @@ export default function EarningsProjection() {
                 Example Weekly Revenue
               </div>
 
-              <div className="mt-5 text-5xl md:text-7xl font-extrabold tracking-tight text-[var(--color-accent)]">
+              <div className="mt-5 text-[clamp(3.2rem,6vw,5.4rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.95] whitespace-nowrap">
                 $6,500–$7,500+
               </div>
 
@@ -84,6 +84,7 @@ export default function EarningsProjection() {
                 bg-white/[0.03]
                 p-8 md:p-10
                 shadow-[var(--shadow-accent)]
+                flex flex-col
               "
             >
               <h3 className="text-2xl font-bold leading-tight">
@@ -101,7 +102,7 @@ export default function EarningsProjection() {
                 and improve opportunities through smarter dispatch execution.
               </p>
 
-              <div className="mt-8">
+              <div className="mt-8 flex justify-center">
                 <a
                   href="/contact"
                   className="

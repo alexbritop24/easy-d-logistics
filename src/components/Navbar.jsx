@@ -27,7 +27,7 @@ export default function Navbar() {
   const mobileLinkClass = (path) => {
     const active = isActive(path);
     return [
-      "block transition duration-200",
+      "block transition duration-200 text-center",
       active ? "text-[var(--color-accent)]" : "text-white/90",
       "hover:text-[var(--color-accent)]",
     ].join(" ");
@@ -63,7 +63,6 @@ export default function Navbar() {
             px-5 md:px-6 py-4
           "
         >
-          {/* Logo */}
           <a href="/" className="flex items-center shrink-0">
             <img
               src="/easy-d-logo-navbar.png"
@@ -72,17 +71,10 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-white font-medium">
-            <a href="/" className={linkClass("/")}>
-              Home
-            </a>
+            <a href="/" className={linkClass("/")}>Home</a>
+            <a href="/about" className={linkClass("/about")}>About</a>
 
-            <a href="/about" className={linkClass("/about")}>
-              About
-            </a>
-
-            {/* Services Dropdown */}
             <div className="relative group">
               <button
                 className={[
@@ -121,15 +113,9 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="/pricing" className={linkClass("/pricing")}>
-              Pricing
-            </a>
+            <a href="/pricing" className={linkClass("/pricing")}>Pricing</a>
+            <a href="/contact" className={linkClass("/contact")}>Contact</a>
 
-            <a href="/contact" className={linkClass("/contact")}>
-              Contact
-            </a>
-
-            {/* Phone */}
             <a
               href="tel:13852928031"
               className="flex items-center gap-2 text-white/70 hover:text-[var(--color-accent)] transition duration-200"
@@ -137,7 +123,6 @@ export default function Navbar() {
               📞 385-292-8031
             </a>
 
-            {/* CTA */}
             <motion.a
               href="/contact"
               whileHover={{ y: -1 }}
@@ -155,12 +140,8 @@ export default function Navbar() {
             </motion.a>
           </div>
 
-          {/* Mobile Hamburger */}
           <button
-            className="
-              md:hidden text-white text-3xl
-              leading-none
-            "
+            className="md:hidden text-white text-3xl leading-none"
             onClick={() => {
               setMenuOpen(!menuOpen);
               if (menuOpen) setServicesOpen(false);
@@ -171,110 +152,116 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
-              initial={{ height: 0, opacity: 0, y: -8 }}
-              animate={{ height: "auto", opacity: 1, y: 0 }}
-              exit={{ height: 0, opacity: 0, y: -8 }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: -8, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.98 }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               className="
-                md:hidden overflow-hidden
+                md:hidden
                 mt-3
-                rounded-2xl
+                rounded-3xl
                 border border-white/10
                 bg-[var(--color-primary-softer)]/96
-                backdrop-blur-xl
-                shadow-[0_12px_35px_rgba(0,0,0,0.35)]
-                px-6 py-6 space-y-6
-                text-white text-lg
+                backdrop-blur-2xl
+                shadow-[0_18px_40px_rgba(0,0,0,0.4)]
+                px-7 py-8
+                text-white
               "
             >
-              <a
-                href="/"
-                className={mobileLinkClass("/")}
-                onClick={() => setMenuOpen(false)}
-              >
-                Home
-              </a>
-
-              <a
-                href="/about"
-                className={mobileLinkClass("/about")}
-                onClick={() => setMenuOpen(false)}
-              >
-                About
-              </a>
-
-              {/* Mobile Services Accordion */}
-              <div>
-                <button
-                  onClick={() => setServicesOpen(!servicesOpen)}
-                  className={[
-                    "flex justify-between w-full py-2 font-semibold transition duration-200",
-                    servicesIsActive ? "text-[var(--color-accent)]" : "text-white/90",
-                  ].join(" ")}
+              <div className="flex flex-col items-center text-center space-y-7">
+                <a
+                  href="/"
+                  className={mobileLinkClass("/")}
+                  onClick={() => setMenuOpen(false)}
                 >
-                  Services <span>{servicesOpen ? "−" : "+"}</span>
-                </button>
+                  Home
+                </a>
 
-                <AnimatePresence>
-                  {servicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.22 }}
-                      className="overflow-hidden mt-2 ml-4 space-y-3 text-base"
-                    >
-                      <a
-                        href="/services"
-                        className={[
-                          "block transition duration-200 hover:text-[var(--color-accent)]",
-                          servicesIsActive ? "text-[var(--color-accent)]" : "text-white/80",
-                        ].join(" ")}
-                        onClick={() => setMenuOpen(false)}
+                <a
+                  href="/about"
+                  className={mobileLinkClass("/about")}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  About
+                </a>
+
+                <div className="w-full">
+                  <button
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                    className={[
+                      "flex justify-center items-center gap-3 w-full py-2 font-semibold transition duration-200 text-center",
+                      servicesIsActive ? "text-[var(--color-accent)]" : "text-white/90",
+                    ].join(" ")}
+                  >
+                    <span>Services</span>
+                    <span>{servicesOpen ? "−" : "+"}</span>
+                  </button>
+
+                  <AnimatePresence>
+                    {servicesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden mt-3"
                       >
-                        All Services
-                      </a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                        <div className="flex flex-col items-center space-y-3">
+                          <a
+                            href="/services"
+                            className={[
+                              "block transition duration-200 hover:text-[var(--color-accent)] text-base",
+                              servicesIsActive ? "text-[var(--color-accent)]" : "text-white/78",
+                            ].join(" ")}
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            All Services
+                          </a>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <a
+                  href="/pricing"
+                  className={mobileLinkClass("/pricing")}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Pricing
+                </a>
+
+                <a
+                  href="/contact"
+                  className={mobileLinkClass("/contact")}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact
+                </a>
+
+                <a
+                  href="tel:13852928031"
+                  className="block font-semibold text-white/80 text-center"
+                >
+                  📞 385-292-8031
+                </a>
+
+                <motion.a
+                  href="/contact"
+                  whileTap={{ scale: 0.98 }}
+                  className="
+                    w-full text-center py-4 rounded-2xl font-semibold
+                    bg-[var(--color-accent)] text-[var(--color-primary)]
+                    shadow-[0_10px_24px_rgba(143,199,238,0.14)]
+                  "
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact Us
+                </motion.a>
               </div>
-
-              <a
-                href="/pricing"
-                className={mobileLinkClass("/pricing")}
-                onClick={() => setMenuOpen(false)}
-              >
-                Pricing
-              </a>
-
-              <a
-                href="/contact"
-                className={mobileLinkClass("/contact")}
-                onClick={() => setMenuOpen(false)}
-              >
-                Contact
-              </a>
-
-              <a href="tel:13852928031" className="block font-semibold text-white/80">
-                📞 385-292-8031
-              </a>
-
-              <motion.a
-                href="/contact"
-                whileTap={{ scale: 0.98 }}
-                className="
-                  block text-center py-3 rounded-xl font-semibold
-                  bg-[var(--color-accent)] text-[var(--color-primary)]
-                  shadow-[0_10px_24px_rgba(143,199,238,0.14)]
-                "
-                onClick={() => setMenuOpen(false)}
-              >
-                Contact Us
-              </motion.a>
             </motion.div>
           )}
         </AnimatePresence>

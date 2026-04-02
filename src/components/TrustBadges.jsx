@@ -85,19 +85,21 @@ export default function TrustBadges() {
                 shadow-[var(--shadow-card)]
                 transition
                 hover:border-[var(--color-border-strong)]
+                min-h-[250px]
+                flex flex-col items-center
               "
             >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
                 <span className="text-[var(--color-accent)] text-lg font-bold tracking-tight">
                   {itemData.value}
                 </span>
               </div>
 
-              <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight">
+              <h3 className="text-xl md:text-[1.65rem] font-bold mb-3 leading-tight max-w-[12ch]">
                 {itemData.title}
               </h3>
 
-              <p className="text-white/70 leading-relaxed text-sm md:text-base">
+              <p className="text-white/70 leading-relaxed text-sm md:text-base max-w-[28ch]">
                 {itemData.desc}
               </p>
             </motion.div>
