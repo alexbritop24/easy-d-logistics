@@ -47,7 +47,14 @@ export default function EarningsProjection() {
                 Example Weekly Revenue
               </div>
 
-              <div className="mt-5 text-[clamp(3.2rem,6vw,5.4rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.95] whitespace-nowrap">
+              {/* Mobile */}
+              <div className="mt-5 md:hidden text-[clamp(2.9rem,15vw,4.8rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.92]">
+                <div>$6,500–</div>
+                <div>$7,500+</div>
+              </div>
+
+              {/* Desktop */}
+              <div className="mt-5 hidden md:block text-[clamp(3.6rem,6vw,5.4rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.95] whitespace-nowrap">
                 $6,500–$7,500+
               </div>
 

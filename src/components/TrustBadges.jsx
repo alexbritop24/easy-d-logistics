@@ -89,8 +89,8 @@ export default function TrustBadges() {
                 flex flex-col items-center
               "
             >
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
-                <span className="text-[var(--color-accent)] text-lg font-bold tracking-tight">
+              <div className="mx-auto mb-5 flex min-h-[56px] min-w-[86px] px-4 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
+                <span className="text-[var(--color-accent)] text-base md:text-lg font-bold tracking-tight leading-none">
                   {itemData.value}
                 </span>
               </div>
