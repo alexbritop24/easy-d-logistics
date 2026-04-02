@@ -1,5 +1,3 @@
-// src/components/EarningsProjection.jsx
-
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 
@@ -47,8 +45,8 @@ export default function EarningsProjection() {
                 Example Weekly Revenue
               </div>
 
-              {/* Mobile */}
-              <div className="mt-5 md:hidden text-[clamp(2.9rem,15vw,4.8rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.92]">
+              {/* ✅ FIXED MOBILE */}
+              <div className="mt-5 md:hidden text-[clamp(2.45rem,13vw,3.9rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.94]">
                 <div>$6,500–</div>
                 <div>$7,500+</div>
               </div>
