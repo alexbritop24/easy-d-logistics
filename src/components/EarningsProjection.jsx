@@ -30,6 +30,8 @@ export default function EarningsProjection() {
         </div>
 
         <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-6 md:gap-8 items-stretch">
+          
+          {/* LEFT CARD */}
           <Reveal delay={0.12} y={18}>
             <motion.div
               whileHover={{ y: -4 }}
@@ -45,13 +47,14 @@ export default function EarningsProjection() {
                 Example Weekly Revenue
               </div>
 
-              {/* ✅ FIXED MOBILE */}
-              <div className="mt-5 md:hidden text-[clamp(2.45rem,13vw,3.9rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.94]">
-                <div>$6,500–</div>
-                <div>$7,500+</div>
+              {/* ✅ MOBILE — FIXED SIDE BY SIDE */}
+              <div className="mt-5 md:hidden flex justify-center">
+                <div className="text-[clamp(2rem,9vw,3.2rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[1] whitespace-nowrap">
+                  $6,500–$7,500+
+                </div>
               </div>
 
-              {/* Desktop */}
+              {/* DESKTOP */}
               <div className="mt-5 hidden md:block text-[clamp(3.6rem,6vw,5.4rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.95] whitespace-nowrap">
                 $6,500–$7,500+
               </div>
@@ -80,6 +83,7 @@ export default function EarningsProjection() {
             </motion.div>
           </Reveal>
 
+          {/* RIGHT CARD */}
           <Reveal delay={0.16} y={18}>
             <motion.div
               whileHover={{ y: -4 }}
@@ -122,6 +126,7 @@ export default function EarningsProjection() {
               </div>
             </motion.div>
           </Reveal>
+
         </div>
       </div>
     </section>
