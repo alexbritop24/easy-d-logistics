@@ -14,6 +14,7 @@ import GetStarted from "./pages/GetStarted.jsx";
 import Contact from "./pages/Contact.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import DotCompliancePage from "./pages/DotCompliancePage.jsx";
+import MCSetupPage from "./pages/MCSetupPage.jsx";
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -22,7 +23,7 @@ function ScrollToTop() {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "instant", // no smooth → feels faster + more professional
+      behavior: "instant",
     });
   }, [pathname]);
 
@@ -32,13 +33,10 @@ function ScrollToTop() {
 function App() {
   return (
     <div className="bg-[var(--color-primary)] text-white min-h-screen flex flex-col">
-      {/* Scroll reset */}
       <ScrollToTop />
 
-      {/* Navbar */}
       <Navbar />
 
-      {/* Main Content */}
       <main className="pt-16 flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -48,11 +46,11 @@ function App() {
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/dot-compliance" element={<DotCompliancePage />} />      
+          <Route path="/dot-compliance" element={<DotCompliancePage />} />
+          <Route path="/mc-number-setup" element={<MCSetupPage />} />
         </Routes>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
