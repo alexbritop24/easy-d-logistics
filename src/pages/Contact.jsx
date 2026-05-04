@@ -13,7 +13,7 @@ export default function Contact() {
   useSEO({
     title: "Contact | Easy D Logistics",
     description:
-      "Contact Easy D Logistics for 24/7 dispatch support. Tell us your equipment type, lanes, and start date — we respond fast.",
+      "Contact Easy D Logistics for dispatch, DOT compliance, and MC setup support. Based in Provo, Utah and serving owner-operators nationwide.",
     path: "/contact",
     ogImage: "/easy-d-logo.png",
   });
@@ -190,7 +190,6 @@ export default function Contact() {
               >
                 <input type="hidden" name="form-name" value="contact" />
 
-                {/* Honeypot */}
                 <input
                   name="company"
                   type="text"
@@ -257,6 +256,57 @@ export default function Contact() {
                   This form securely emails submissions to info@easydlogistics.com.
                 </p>
               </form>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* GOOGLE MAP */}
+      <section className="px-6 pb-20">
+        <div className="max-w-6xl mx-auto">
+          <Reveal y={18}>
+            <div className="rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] p-6 md:p-8 shadow-[var(--shadow-card)] overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+                <div>
+                  <div className="text-sm uppercase tracking-[0.18em] text-white/42">
+                    Visit Our Office
+                  </div>
+
+                  <h2 className="mt-2 text-2xl md:text-3xl font-bold">
+                    Easy D Logistics in Provo, Utah
+                  </h2>
+
+                  <p className="mt-3 text-white/70 leading-relaxed">
+                    370 W 400 N, Suite 9, Provo, UT 84601
+                  </p>
+                </div>
+
+                <a
+                  href="https://maps.google.com/?q=370+W+400+N+Suite+9+Provo+UT+84601"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex items-center justify-center
+                    px-6 py-3 rounded-xl font-semibold
+                    border border-white/15 text-white
+                    hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]
+                    transition
+                  "
+                >
+                  Open in Google Maps
+                </a>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/20">
+                <iframe
+                  title="Easy D Logistics Google Map"
+                  src="https://www.google.com/maps?q=370%20W%20400%20N%20Suite%209%20Provo%20UT%2084601&output=embed"
+                  className="w-full h-[320px] md:h-[420px] border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </Reveal>
         </div>
