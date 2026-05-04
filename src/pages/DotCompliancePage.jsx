@@ -1,8 +1,16 @@
 // src/pages/DotCompliancePage.jsx
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
+import useSEO from "../hooks/useSEO";
 
 export default function DotCompliancePage() {
+  useSEO({
+    title: "DOT Compliance Services | MC & USDOT Setup | Easy D Logistics",
+    description:
+      "We handle DOT compliance, MC registration, BOC-3 filing, and insurance setup so you stay compliant and on the road. Fast, reliable, done for you.",
+    path: "/dot-compliance",
+  });
+
   const complianceItems = [
     "MC Authority",
     "USDOT Registration",
@@ -13,6 +21,7 @@ export default function DotCompliancePage() {
 
   return (
     <main className="bg-[var(--color-primary)] text-white min-h-screen">
+      {/* HERO */}
       <section className="relative overflow-hidden px-6 pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(143,199,238,0.12),transparent_38%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/35" />
@@ -115,6 +124,34 @@ export default function DotCompliancePage() {
                 ))}
               </div>
             </motion.div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SEO CONTENT SECTION (THIS IS WHAT MAKES YOU RANK) */}
+      <section className="px-6 py-16 md:py-20">
+        <div className="max-w-5xl mx-auto">
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
+              DOT Compliance Services For Owner-Operators
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.04}>
+            <p className="mt-6 text-white/72 text-base md:text-lg leading-relaxed">
+              Starting a trucking business or maintaining compliance can be overwhelming.
+              We help owner-operators and small fleets with MC number setup, USDOT registration,
+              BOC-3 filing, and insurance requirements so your authority stays active and you
+              can stay focused on generating revenue.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
+              Whether you're just getting started or fixing compliance issues,
+              our team ensures your paperwork is handled correctly, preventing delays,
+              shutdowns, or lost load opportunities.
+            </p>
           </Reveal>
         </div>
       </section>
