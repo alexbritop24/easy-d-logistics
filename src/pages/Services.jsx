@@ -10,7 +10,7 @@ export default function Services() {
   useSEO({
     title: "Services | Easy D Logistics Dispatching",
     description:
-      "Dispatch services for Dry Van, Flatbed, Hotshot, Reefer, plus paperwork handling and broker negotiation. Built to keep trucks moving and profitable.",
+      "Dispatch services for Dry Van, Flatbed, Hotshot, Reefer, DOT and MC compliance, paperwork handling, and broker negotiation.",
     path: "/services",
     ogImage: "/easy-d-logo.png",
   });
@@ -19,26 +19,39 @@ export default function Services() {
     {
       title: "Dry Van",
       description: "Consistent, high-demand freight with optimized routes.",
+      href: "/services",
     },
     {
       title: "Flatbed",
       description: "Specialized freight with higher RPM and careful planning.",
+      href: "/services",
     },
     {
       title: "Hotshot",
       description: "Fast, time-sensitive loads, ideal for urgent freight and flexible lanes.",
+      href: "/services",
     },
     {
       title: "Reefer",
       description: "Temperature-controlled loads with strict delivery windows and premium rate potential.",
+      href: "/services",
+    },
+    {
+      title: "DOT & MC Compliance",
+      description:
+        "Compliance support for DOT, MC authority, filings, insurance, and required setup so your operation stays road-ready.",
+      href: "/dot-compliance",
+      highlight: true,
     },
     {
       title: "Paperwork",
       description: "Carrier packets, rate confirmations, invoicing, and more.",
+      href: "/services",
     },
     {
       title: "Broker Negotiation",
       description: "Professional negotiation for the best possible load rates.",
+      href: "/services",
     },
   ];
 
@@ -93,7 +106,7 @@ export default function Services() {
           <Reveal y={14} delay={0.08}>
             <p className="mt-5 text-white/78 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
               From fast-moving hotshot loads to temperature-controlled freight,
-              our services are built to keep your truck moving, profitable, and organized.
+              our services are built to keep your truck moving, profitable, compliant, and organized.
             </p>
           </Reveal>
         </div>
@@ -112,8 +125,8 @@ export default function Services() {
               </h2>
 
               <p className="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
-                We combine dispatch execution, broker communication, and admin support
-                into one streamlined service built around the way real drivers operate.
+                We combine dispatch execution, broker communication, compliance support,
+                and admin help into one streamlined service built around the way real drivers operate.
               </p>
             </div>
           </Reveal>
@@ -126,21 +139,27 @@ export default function Services() {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
           >
             {servicesList.map((service) => (
-              <motion.div
+              <motion.a
                 key={service.title}
+                href={service.href}
                 variants={card}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.18 }}
-                className="
-                  rounded-2xl border border-white/10
+                className={`
+                  rounded-2xl border
                   bg-[var(--color-primary-softer)]
                   p-7 md:p-8
                   shadow-[var(--shadow-card)]
-                  transition hover:border-[var(--color-border-strong)]
-                "
+                  transition
+                  ${
+                    service.highlight
+                      ? "border-[var(--color-border-strong)]"
+                      : "border-white/10 hover:border-[var(--color-border-strong)]"
+                  }
+                `}
               >
                 <div className="mb-4 inline-flex px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-white/5 border border-white/10 text-white/75">
-                  Easy D Logistics
+                  {service.highlight ? "Compliance Service" : "Easy D Logistics"}
                 </div>
 
                 <h2 className="text-2xl font-bold mb-3 leading-snug">
@@ -150,7 +169,13 @@ export default function Services() {
                 <p className="text-white/72 leading-relaxed">
                   {service.description}
                 </p>
-              </motion.div>
+
+                {service.highlight && (
+                  <div className="mt-5 text-[var(--color-accent)] font-semibold text-sm">
+                    Learn more →
+                  </div>
+                )}
+              </motion.a>
             ))}
           </motion.div>
         </div>
@@ -179,7 +204,7 @@ export default function Services() {
                 </div>
 
                 <p className="mt-4 text-white/82 max-w-md text-sm md:text-base leading-relaxed">
-                  Dispatch updates, broker coordination, and documentation support —
+                  Dispatch updates, broker coordination, documentation, and compliance support —
                   all built to reduce friction while you stay focused on the road.
                 </p>
               </div>
@@ -204,14 +229,14 @@ export default function Services() {
 
             <Reveal y={14} delay={0.12}>
               <p className="mt-5 text-white/74 leading-relaxed text-base md:text-lg max-w-xl">
-                We combine real-time communication, broker negotiation, and
-                back-office support to give owner-operators a competitive edge
-                without creating distractions or wasted time.
+                We combine real-time communication, broker negotiation, compliance support,
+                and back-office help to give owner-operators a competitive edge without
+                creating distractions or wasted time.
               </p>
             </Reveal>
 
             <Reveal y={14} delay={0.16}>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href="/contact"
                   className="
@@ -222,6 +247,18 @@ export default function Services() {
                   "
                 >
                   Contact Us
+                </a>
+
+                <a
+                  href="/dot-compliance"
+                  className="
+                    inline-flex items-center justify-center
+                    px-7 py-3 rounded-xl font-semibold
+                    border border-white/15 text-white
+                    transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]
+                  "
+                >
+                  DOT Compliance
                 </a>
               </div>
             </Reveal>
@@ -236,15 +273,15 @@ export default function Services() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
                 <h2 className="text-2xl md:text-4xl font-extrabold leading-tight">
-                  Need Dispatch Support
+                  Need Dispatch Or Compliance Support
                   <span className="block text-[var(--color-accent)]">
                     That Actually Keeps Up?
                   </span>
                 </h2>
 
                 <p className="mt-3 text-white/74 max-w-2xl">
-                  Let’s talk about your equipment, lanes, and dispatch needs so
-                  we can help you stay loaded and operating with confidence.
+                  Let’s talk about your equipment, lanes, dispatch needs, and compliance setup
+                  so we can help you stay loaded and operating with confidence.
                 </p>
               </div>
 

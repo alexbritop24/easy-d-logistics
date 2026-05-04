@@ -42,7 +42,7 @@ export default function Navbar() {
     },
   };
 
-  const servicesIsActive = isActive("/services");
+  const servicesIsActive = isActive("/services") || isActive("/dot-compliance");
 
   return (
     <motion.nav
@@ -88,7 +88,7 @@ export default function Navbar() {
 
               <div
                 className="
-                  absolute top-full left-0 mt-3 w-56
+                  absolute top-full left-0 mt-3 w-64
                   rounded-2xl
                   bg-[var(--color-primary-softer)]/95
                   backdrop-blur-xl
@@ -104,14 +104,28 @@ export default function Navbar() {
                 <a
                   href="/services"
                   className={[
-                    "block px-4 py-3 text-sm rounded-2xl transition hover:bg-white/5",
-                    servicesIsActive ? "text-[var(--color-accent)]" : "text-white/90",
+                    "block px-4 py-3 text-sm rounded-t-2xl transition hover:bg-white/5",
+                    isActive("/services") ? "text-[var(--color-accent)]" : "text-white/90",
                   ].join(" ")}
                 >
                   All Services
                 </a>
+
+                <a
+                  href="/dot-compliance"
+                  className={[
+                    "block px-4 py-3 text-sm rounded-b-2xl transition hover:bg-white/5",
+                    isActive("/dot-compliance") ? "text-[var(--color-accent)]" : "text-white/90",
+                  ].join(" ")}
+                >
+                  DOT & MC Compliance
+                </a>
               </div>
             </div>
+
+            <a href="/dot-compliance" className={linkClass("/dot-compliance")}>
+              DOT Compliance
+            </a>
 
             <a href="/pricing" className={linkClass("/pricing")}>Pricing</a>
             <a href="/contact" className={linkClass("/contact")}>Contact</a>
@@ -214,17 +228,36 @@ export default function Navbar() {
                             href="/services"
                             className={[
                               "block transition duration-200 hover:text-[var(--color-accent)] text-base",
-                              servicesIsActive ? "text-[var(--color-accent)]" : "text-white/78",
+                              isActive("/services") ? "text-[var(--color-accent)]" : "text-white/78",
                             ].join(" ")}
                             onClick={() => setMenuOpen(false)}
                           >
                             All Services
+                          </a>
+
+                          <a
+                            href="/dot-compliance"
+                            className={[
+                              "block transition duration-200 hover:text-[var(--color-accent)] text-base",
+                              isActive("/dot-compliance") ? "text-[var(--color-accent)]" : "text-white/78",
+                            ].join(" ")}
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            DOT & MC Compliance
                           </a>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
+
+                <a
+                  href="/dot-compliance"
+                  className={mobileLinkClass("/dot-compliance")}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  DOT Compliance
+                </a>
 
                 <a
                   href="/pricing"

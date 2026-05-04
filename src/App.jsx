@@ -13,6 +13,7 @@ import Pricing from "./pages/Pricing.jsx";
 import GetStarted from "./pages/GetStarted.jsx";
 import Contact from "./pages/Contact.jsx";
 import FAQ from "./pages/FAQ.jsx";
+import DotCompliancePage from "./pages/DotCompliancePage.jsx";
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/dot-compliance" element={<DotCompliancePage />} />      
         </Routes>
       </main>
 
