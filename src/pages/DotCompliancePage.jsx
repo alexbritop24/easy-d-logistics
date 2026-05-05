@@ -5,18 +5,51 @@ import useSEO from "../hooks/useSEO";
 
 export default function DotCompliancePage() {
   useSEO({
-    title: "DOT Compliance Services | MC & USDOT Setup | Easy D Logistics",
+    title: "DOT Compliance Services | MC, USDOT, IFTA & IRP Setup | Easy D Logistics",
     description:
-      "We handle DOT compliance, MC registration, BOC-3 filing, and insurance setup so you stay compliant and on the road. Fast, reliable, done for you.",
+      "Easy D Logistics handles DOT compliance, MC and USDOT setup, LLC and EIN setup, insurance coordination, IFTA, IRP, permit management, drug program enrollment, and audit preparation.",
     path: "/dot-compliance",
   });
 
   const complianceItems = [
-    "MC Authority",
-    "USDOT Registration",
-    "BOC-3 Filing",
-    "Insurance",
-    "Safety & Permits",
+    "LLC + EIN Setup",
+    "MC + USDOT Setup",
+    "Insurance Coordination",
+    "IFTA + IRP",
+    "Drug Program Enrollment",
+    "Permit Management",
+    "Audit Preparation",
+  ];
+
+  const detailedServices = [
+    {
+      title: "LLC + EIN Setup",
+      desc: "We help new trucking businesses get properly structured with LLC and EIN setup before moving into authority and compliance filings.",
+    },
+    {
+      title: "MC + USDOT Setup",
+      desc: "We assist with MC authority and USDOT registration so your trucking operation can become active and legally ready to operate.",
+    },
+    {
+      title: "Insurance Coordination",
+      desc: "We help coordinate the insurance process so your filings and authority setup move forward without unnecessary delays.",
+    },
+    {
+      title: "IFTA + IRP",
+      desc: "We support IFTA and IRP setup for carriers that need fuel tax and apportioned registration compliance across multiple states.",
+    },
+    {
+      title: "Drug Program Enrollment",
+      desc: "We help connect carriers with required drug and alcohol program enrollment to stay compliant with FMCSA expectations.",
+    },
+    {
+      title: "Permit Management",
+      desc: "We help manage trucking permits and required documents so your operation stays organized and road-ready.",
+    },
+    {
+      title: "Audit Preparation",
+      desc: "We help prepare your paperwork and compliance records so you are better positioned for DOT audits or safety reviews.",
+    },
   ];
 
   return (
@@ -45,13 +78,14 @@ export default function DotCompliancePage() {
 
             <Reveal y={14} delay={0.08}>
               <p className="mt-6 text-base md:text-xl text-white/78 max-w-2xl leading-relaxed">
-                We handle your DOT & MC compliance so you can focus on driving
-                and making money.
+                We handle DOT compliance, MC and USDOT setup, filings, permits,
+                insurance coordination, and compliance support so you can focus
+                on driving and making money.
               </p>
             </Reveal>
 
             <Reveal y={14} delay={0.12}>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <a
                   href="/get-started"
                   className="
@@ -118,7 +152,7 @@ export default function DotCompliancePage() {
                   >
                     <span className="text-white/82 font-medium">{item}</span>
                     <span className="text-[var(--color-accent)] text-sm font-semibold">
-                      Active
+                      Supported
                     </span>
                   </div>
                 ))}
@@ -128,7 +162,7 @@ export default function DotCompliancePage() {
         </div>
       </section>
 
-      {/* SEO CONTENT SECTION (THIS IS WHAT MAKES YOU RANK) */}
+      {/* SEO CONTENT SECTION */}
       <section className="px-6 py-16 md:py-20">
         <div className="max-w-5xl mx-auto">
           <Reveal>
@@ -140,21 +174,132 @@ export default function DotCompliancePage() {
           <Reveal delay={0.04}>
             <p className="mt-6 text-white/72 text-base md:text-lg leading-relaxed">
               Starting a trucking business or maintaining compliance can be overwhelming.
-              We help owner-operators and small fleets with MC number setup, USDOT registration,
-              BOC-3 filing, and insurance requirements so your authority stays active and you
-              can stay focused on generating revenue.
+              Easy D Logistics helps owner-operators and small fleets with LLC and EIN setup,{" "}
+              <a
+                href="/mc-number-setup"
+                className="text-[var(--color-accent)] underline underline-offset-4 hover:opacity-85 transition"
+              >
+                MC number setup
+              </a>
+              , USDOT registration, BOC-3 filing, insurance coordination, IFTA, IRP,
+              permit management, drug program enrollment, and audit preparation.
             </p>
           </Reveal>
 
           <Reveal delay={0.08}>
             <p className="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
               Whether you're just getting started or fixing compliance issues,
-              our team ensures your paperwork is handled correctly, preventing delays,
-              shutdowns, or lost load opportunities.
+              our team helps keep your paperwork organized and your authority moving
+              forward so you can avoid delays, shutdowns, and missed load opportunities.
             </p>
           </Reveal>
         </div>
       </section>
+
+      {/* DETAILED SERVICES */}
+      <section className="px-6 pb-20">
+        <div className="max-w-6xl mx-auto">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+              <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/75">
+                Compliance Services
+              </div>
+
+              <h2 className="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                Full Compliance Support
+                <span className="block text-[var(--color-accent)]">
+                  For Trucking Operations
+                </span>
+              </h2>
+
+              <p className="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
+                We support the setup, filings, and ongoing compliance work needed
+                to keep your trucking business organized and road-ready.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+            {detailedServices.map((service, index) => (
+              <Reveal key={service.title} y={16} delay={0.04 * index}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.18 }}
+                  className="
+                    h-full rounded-2xl border border-white/10
+                    bg-[var(--color-primary-softer)]
+                    p-6 md:p-7
+                    shadow-[var(--shadow-card)]
+                    transition hover:border-[var(--color-border-strong)]
+                  "
+                >
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[var(--color-accent)] font-bold">
+                    {index + 1}
+                  </div>
+
+                  <h3 className="text-xl font-bold leading-snug">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-3 text-white/70 leading-relaxed text-sm md:text-base">
+                    {service.desc}
+                  </p>
+                </motion.div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <Reveal y={18}>
+        <section className="px-6 pb-20">
+          <div className="max-w-6xl mx-auto rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] px-8 py-10 md:px-12 md:py-12 shadow-[var(--shadow-card)]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-extrabold leading-tight">
+                  Need Help Getting
+                  <span className="block text-[var(--color-accent)]">
+                    Compliant And Road-Ready?
+                  </span>
+                </h2>
+
+                <p className="mt-3 text-white/74 max-w-2xl leading-relaxed">
+                  Tell us where you are in the process and we’ll help you understand
+                  the next step for your trucking business.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/get-started"
+                  className="
+                    inline-flex items-center justify-center
+                    px-7 py-3 rounded-xl font-semibold
+                    bg-[var(--color-accent)] text-[var(--color-primary)]
+                    hover:opacity-90 transition
+                  "
+                >
+                  Start Compliance Setup
+                </a>
+
+                <a
+                  href="/mc-number-setup"
+                  className="
+                    inline-flex items-center justify-center
+                    px-7 py-3 rounded-xl font-semibold
+                    border border-white/15 text-white
+                    hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]
+                    transition
+                  "
+                >
+                  MC Number Setup
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Reveal>
     </main>
   );
 }

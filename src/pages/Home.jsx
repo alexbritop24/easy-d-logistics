@@ -26,6 +26,7 @@ export default function Home() {
       <TrustBadges />
       <ServicesOverview />
 
+      {/* COMPLIANCE + SEO LINKING SECTION */}
       <section className="bg-[var(--color-primary)] text-white px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto">
           <Reveal y={18}>
@@ -40,6 +41,7 @@ export default function Home() {
                 flex flex-col md:flex-row md:items-center md:justify-between gap-6
               "
             >
+              {/* TEXT */}
               <div>
                 <div className="text-sm uppercase tracking-[0.18em] text-white/42">
                   DOT & MC Compliance
@@ -58,18 +60,46 @@ export default function Home() {
                 </p>
               </div>
 
-              <a
-                href="/dot-compliance"
-                className="
-                  inline-flex items-center justify-center
-                  px-7 py-3 rounded-xl font-semibold
-                  bg-[var(--color-accent)] text-[var(--color-primary)]
-                  hover:opacity-90 transition
-                  shrink-0
-                "
-              >
-                View Compliance
-              </a>
+              {/* 🔥 UPDATED BUTTON GROUP */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                <a
+                  href="/dot-compliance"
+                  className="
+                    inline-flex items-center justify-center
+                    px-6 py-3 rounded-xl font-semibold
+                    bg-[var(--color-accent)] text-[var(--color-primary)]
+                    hover:opacity-90 transition
+                  "
+                >
+                  DOT Compliance
+                </a>
+
+                <a
+                  href="/truck-dispatch-services"
+                  className="
+                    inline-flex items-center justify-center
+                    px-6 py-3 rounded-xl font-semibold
+                    border border-white/20 text-white
+                    hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]
+                    transition
+                  "
+                >
+                  Dispatch Services
+                </a>
+
+                <a
+                  href="/mc-number-setup"
+                  className="
+                    inline-flex items-center justify-center
+                    px-6 py-3 rounded-xl font-semibold
+                    border border-white/20 text-white
+                    hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]
+                    transition
+                  "
+                >
+                  MC Setup
+                </a>
+              </div>
             </motion.div>
           </Reveal>
         </div>
