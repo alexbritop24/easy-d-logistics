@@ -17,13 +17,13 @@ export default function HowItWorks() {
     },
     {
       step: "03",
-      title: "We Negotiate Rates",
-      desc: "Our team handles broker communication and rate negotiation to help you secure stronger-paying loads.",
+      title: "We Handle Rates & Compliance",
+      desc: "We manage broker communication, rate negotiation, and help guide DOT compliance and MC requirements when needed.",
     },
     {
       step: "04",
       title: "You Drive & Get Paid",
-      desc: "You stay focused on the road while we manage dispatch updates, paperwork coordination, and support.",
+      desc: "You stay focused on the road while we handle dispatch updates, paperwork coordination, and ongoing support.",
     },
   ];
 
@@ -64,8 +64,8 @@ export default function HowItWorks() {
 
           <Reveal delay={0.08}>
             <p className="mt-5 text-base md:text-lg text-white/75 leading-relaxed">
-              We keep the process simple, clear, and efficient so you can stay
-              focused on driving while we handle the coordination behind the scenes.
+              From truck dispatch services to DOT compliance support and MC setup guidance,
+              we keep the process simple so you can stay focused on driving.
             </p>
           </Reveal>
         </div>

@@ -7,17 +7,17 @@ export default function TrustBadges() {
     {
       value: "24/7",
       title: "Dispatch Support",
-      desc: "Real support when loads shift, brokers call, or updates need to happen fast.",
+      desc: "Load booking, broker updates, and support when your operation needs quick communication.",
     },
     {
-      value: "Fast",
-      title: "Paperwork Handling",
-      desc: "Carrier packets, confirmations, and dispatch coordination handled with consistency.",
+      value: "DOT",
+      title: "Compliance Help",
+      desc: "Support for DOT compliance, MC authority, USDOT registration, and filing requirements.",
     },
     {
-      value: "Strong",
-      title: "Rate Negotiation",
-      desc: "Professional broker communication focused on stronger-paying freight opportunities.",
+      value: "MC",
+      title: "Authority Setup",
+      desc: "We help new owner-operators get set up correctly so they can stay compliant and start moving.",
     },
   ];
 
@@ -49,17 +49,17 @@ export default function TrustBadges() {
 
           <Reveal delay={0.04}>
             <h2 className="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Dispatch Support You Can
+              Dispatch, Compliance,
               <span className="block text-[var(--color-accent)]">
-                Actually Rely On
+                And Setup Support
               </span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.08}>
             <p className="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
-              We help owner-operators and small fleets stay organized, move faster,
-              and operate with more confidence on every load.
+              Easy D Logistics helps owner-operators and small fleets stay loaded,
+              compliant, organized, and ready to operate nationwide.
             </p>
           </Reveal>
         </div>
@@ -95,11 +95,11 @@ export default function TrustBadges() {
                 </span>
               </div>
 
-              <h3 className="text-xl md:text-[1.65rem] font-bold mb-3 leading-tight max-w-[12ch]">
+              <h3 className="text-xl md:text-[1.65rem] font-bold mb-3 leading-tight max-w-[14ch]">
                 {itemData.title}
               </h3>
 
-              <p className="text-white/70 leading-relaxed text-sm md:text-base max-w-[28ch]">
+              <p className="text-white/70 leading-relaxed text-sm md:text-base max-w-[29ch]">
                 {itemData.desc}
               </p>
             </motion.div>

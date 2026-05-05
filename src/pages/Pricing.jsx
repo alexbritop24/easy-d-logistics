@@ -5,9 +5,9 @@ import Reveal from "../components/Reveal";
 
 export default function Pricing() {
   useSEO({
-    title: "Pricing | Easy D Logistics Dispatching",
+    title: "Truck Dispatch Pricing | Easy D Logistics",
     description:
-      "Transparent dispatch pricing for owner-operators and fleets. Choose the level of dispatch support that fits your operation.",
+      "Transparent truck dispatch pricing for owner-operators and small fleets. Get load booking, broker negotiation, paperwork support, and dispatch coordination.",
     path: "/pricing",
     ogImage: "https://easydlogistics.com/easy-d-logo.png",
   });
@@ -54,12 +54,11 @@ export default function Pricing() {
 
   return (
     <main className="bg-[var(--color-primary)] text-white">
-      {/* Header */}
       <section className="px-6 pt-24 pb-12">
         <div className="max-w-6xl mx-auto text-center">
           <Reveal y={18}>
             <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/75">
-              Transparent Dispatch Pricing
+              Transparent Truck Dispatch Pricing
             </div>
           </Reveal>
 
@@ -67,21 +66,21 @@ export default function Pricing() {
             <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
               Pricing That Fits
               <span className="block text-[var(--color-accent)]">
-                Your Operation
+                Your Trucking Operation
               </span>
             </h1>
           </Reveal>
 
           <Reveal y={14} delay={0.08}>
             <p className="mt-5 text-base md:text-lg text-white/75 max-w-3xl mx-auto leading-relaxed">
-              Simple pricing for owner-operators and growing fleets. Choose the level
-              of support that matches your goals, your lanes, and the way you operate.
+              Simple dispatch pricing for owner-operators and growing fleets.
+              Choose the level of support that matches your truck type, preferred
+              lanes, paperwork needs, and revenue goals.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Pricing Cards */}
       <section className="px-6 pb-14">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-7">
           {plans.map((plan, idx) => (
@@ -155,18 +154,18 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Bottom Note */}
       <Reveal y={16} delay={0.2}>
         <section className="px-6 pb-20">
           <div className="max-w-6xl mx-auto rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] px-8 py-8 md:px-10 md:py-10 shadow-[var(--shadow-card)]">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                  Need Support For Multiple Trucks?
+                  Need Dispatch Or Compliance Support?
                 </h2>
                 <p className="mt-3 text-white/72 max-w-2xl leading-relaxed">
-                  If you have more than one truck, we can help with fleet support,
-                  custom planning, and dispatch workflows built around your operation.
+                  If you have more than one truck, need DOT compliance help, or
+                  want support with MC setup and paperwork, we can help build a
+                  plan around your operation.
                 </p>
               </div>
 

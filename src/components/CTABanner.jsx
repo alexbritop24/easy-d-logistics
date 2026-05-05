@@ -8,31 +8,31 @@ export default function CTABanner() {
       <div className="max-w-6xl mx-auto">
         <Reveal y={18}>
           <div className="rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] px-8 py-10 md:px-12 md:py-14 shadow-[var(--shadow-card)] overflow-hidden relative">
-            {/* subtle glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(143,199,238,0.10),transparent_42%)] pointer-events-none" />
 
             <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div className="max-w-3xl">
                 <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/75">
-                  Ready To Move Forward?
+                  Dispatch + Compliance Support
                 </div>
 
                 <h2 className="mt-5 text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
-                  Ready To Maximize
+                  Ready To Stay Loaded,
                   <span className="block text-[var(--color-accent)]">
-                    Your Earnings?
+                    Compliant, And Moving?
                   </span>
                 </h2>
 
                 <p className="mt-4 text-base md:text-lg text-white/74 max-w-2xl leading-relaxed">
-                  Work with Easy D Logistics and get dispatch support built to keep
-                  you loaded, organized, and focused on the road instead of paperwork.
+                  Work with Easy D Logistics for truck dispatch services, DOT & MC
+                  compliance support, MC setup help, and paperwork coordination
+                  built for owner-operators and small fleets.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row md:flex-col gap-4 md:min-w-[220px]">
                 <motion.a
-                  href="/contact"
+                  href="/get-started"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.16 }}
@@ -45,6 +45,19 @@ export default function CTABanner() {
                 >
                   Get Started Now
                 </motion.a>
+
+                <a
+                  href="/dot-compliance"
+                  className="
+                    inline-flex items-center justify-center
+                    px-7 py-3.5 rounded-xl font-semibold
+                    border border-white/12 text-white/88
+                    hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]
+                    transition
+                  "
+                >
+                  DOT Compliance
+                </a>
 
                 <a
                   href="tel:+13852928031"

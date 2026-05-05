@@ -6,9 +6,9 @@ import Reveal from "../components/Reveal";
 
 export default function FAQ() {
   useSEO({
-    title: "FAQ | Easy D Logistics",
+    title: "Truck Dispatch & DOT Compliance FAQ | Easy D Logistics",
     description:
-      "Frequently asked questions about Easy D Logistics dispatch services: pricing, equipment types, MC requirements, and how dispatching works.",
+      "Frequently asked questions about truck dispatch services, DOT compliance, MC setup, pricing, equipment types, and how Easy D Logistics supports owner-operators.",
     path: "/faq",
     ogImage: "/easy-d-logo.png",
   });
@@ -19,24 +19,28 @@ export default function FAQ() {
 
   const items = [
     {
-      q: "What does a dispatch service do?",
-      a: "We book loads, negotiate rates, handle paperwork, and provide 24/7 support so you can focus on driving.",
+      q: "What does a truck dispatch service do?",
+      a: "A truck dispatch service helps with load booking, broker communication, rate negotiation, paperwork coordination, and support so drivers can stay focused on the road.",
     },
     {
-      q: "How much do you charge?",
-      a: "Pricing starts at 6% per load, with Pro and Premium options depending on the level of support you need.",
+      q: "Do you help with DOT and MC compliance?",
+      a: "Yes. Easy D Logistics helps with DOT compliance support, MC authority setup, USDOT registration, filing requirements, and paperwork guidance.",
+    },
+    {
+      q: "How much do you charge for dispatching?",
+      a: "Dispatch pricing starts at 6% per load, with Pro and Premium options depending on the level of dispatch support your operation needs.",
     },
     {
       q: "Do you force dispatch?",
-      a: "No. You always approve every load before we book anything on your behalf.",
+      a: "No. Drivers approve every load before anything is booked. We focus on communication, transparency, and load options that fit your operation.",
     },
     {
       q: "What equipment do you dispatch?",
-      a: "We work with Dry Van, Flatbed, Hotshot, Reefer, and other equipment types.",
+      a: "We work with Dry Van, Flatbed, Hotshot, Reefer, and other equipment types depending on your lanes, authority, and availability.",
     },
     {
-      q: "Do I need an MC number?",
-      a: "Yes. You need an active MC authority and valid insurance to work with us.",
+      q: "Do I need an MC number to work with you?",
+      a: "For dispatch services, you generally need active MC authority and valid insurance. If you still need MC setup or compliance help, we can help guide that process.",
     },
   ];
 
@@ -45,7 +49,6 @@ export default function FAQ() {
 
   return (
     <main className="bg-[var(--color-primary)] text-white">
-      {/* HEADER */}
       <section className="px-6 pt-24 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <Reveal y={18}>
@@ -56,17 +59,17 @@ export default function FAQ() {
 
           <Reveal y={18} delay={0.04}>
             <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-              Everything You Need
+              Truck Dispatch,
               <span className="block text-[var(--color-accent)]">
-                To Know
+                Compliance & Setup FAQ
               </span>
             </h1>
           </Reveal>
 
           <Reveal y={14} delay={0.08}>
             <p className="mt-5 text-white/75 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-              Clear answers about how our dispatch service works, pricing,
-              requirements, and what to expect when working with us.
+              Clear answers about dispatch services, DOT compliance, MC setup,
+              pricing, equipment types, and what to expect when working with Easy D Logistics.
             </p>
           </Reveal>
 
@@ -92,7 +95,6 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* FAQ LIST */}
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto space-y-4">
           {items.map((item, i) => {
@@ -110,9 +112,7 @@ export default function FAQ() {
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="w-full text-left px-6 py-5 font-semibold flex items-center justify-between"
                   >
-                    <span className="text-base md:text-lg">
-                      {item.q}
-                    </span>
+                    <span className="text-base md:text-lg">{item.q}</span>
 
                     <motion.span
                       className="text-[var(--color-accent)] text-xl"
@@ -135,9 +135,7 @@ export default function FAQ() {
                         transition={{ duration: 0.22 }}
                         className="px-6 pb-5 text-white/72 overflow-hidden"
                       >
-                        <p className="leading-relaxed">
-                          {item.a}
-                        </p>
+                        <p className="leading-relaxed">{item.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -148,7 +146,6 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* CTA */}
       <Reveal y={18} delay={0.12}>
         <section className="px-6 pb-20">
           <div className="max-w-4xl mx-auto rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] px-8 py-10 md:px-10 md:py-12 shadow-[var(--shadow-card)] text-center">
@@ -160,8 +157,8 @@ export default function FAQ() {
             </h2>
 
             <p className="mt-4 text-white/74 max-w-xl mx-auto">
-              Reach out and we’ll walk you through everything so you can get started
-              with confidence.
+              Reach out and we’ll walk you through dispatch, DOT compliance, MC setup,
+              and the best next step for your operation.
             </p>
 
             <a

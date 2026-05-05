@@ -23,15 +23,13 @@ export default function EarningsProjection() {
 
           <Reveal delay={0.08}>
             <p className="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
-              A well-coordinated dispatch operation can improve consistency,
-              reduce wasted time, and help drivers access stronger-paying loads.
+              Better dispatching, organized paperwork, and compliance support can
+              help owner-operators reduce downtime and stay focused on profitable loads.
             </p>
           </Reveal>
         </div>
 
         <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-6 md:gap-8 items-stretch">
-          
-          {/* LEFT CARD */}
           <Reveal delay={0.12} y={18}>
             <motion.div
               whileHover={{ y: -4 }}
@@ -47,21 +45,19 @@ export default function EarningsProjection() {
                 Example Weekly Revenue
               </div>
 
-              {/* ✅ MOBILE — FIXED SIDE BY SIDE */}
               <div className="mt-5 md:hidden flex justify-center">
                 <div className="text-[clamp(2rem,9vw,3.2rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[1] whitespace-nowrap">
                   $6,500–$7,500+
                 </div>
               </div>
 
-              {/* DESKTOP */}
               <div className="mt-5 hidden md:block text-[clamp(3.6rem,6vw,5.4rem)] font-extrabold tracking-tight text-[var(--color-accent)] leading-[0.95] whitespace-nowrap">
                 $6,500–$7,500+
               </div>
 
               <p className="mt-5 text-white/72 text-base md:text-lg max-w-2xl leading-relaxed">
                 Example weekly gross potential for a single truck with steady freight,
-                good lane alignment, and strong dispatch support.
+                good lane alignment, compliant setup, and strong dispatch support.
               </p>
 
               <div className="mt-8 grid sm:grid-cols-3 gap-4">
@@ -76,14 +72,13 @@ export default function EarningsProjection() {
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <div className="text-sm text-white/48">Operations</div>
-                  <div className="mt-2 text-lg font-semibold">More consistency</div>
+                  <div className="text-sm text-white/48">Compliance</div>
+                  <div className="mt-2 text-lg font-semibold">Road-ready setup</div>
                 </div>
               </div>
             </motion.div>
           </Reveal>
 
-          {/* RIGHT CARD */}
           <Reveal delay={0.16} y={18}>
             <motion.div
               whileHover={{ y: -4 }}
@@ -102,13 +97,13 @@ export default function EarningsProjection() {
 
               <p className="mt-4 text-white/72 leading-relaxed">
                 Actual earnings vary based on equipment type, market conditions,
-                preferred regions, availability, broker relationships, and how
-                consistently the truck is moving.
+                preferred regions, availability, broker relationships, compliance status,
+                and how consistently the truck is moving.
               </p>
 
               <p className="mt-4 text-white/72 leading-relaxed">
                 We focus on helping drivers stay organized, reduce empty time,
-                and improve opportunities through smarter dispatch execution.
+                handle paperwork, and improve opportunities through smarter dispatch execution.
               </p>
 
               <div className="mt-8 flex justify-center">
@@ -126,7 +121,6 @@ export default function EarningsProjection() {
               </div>
             </motion.div>
           </Reveal>
-
         </div>
       </div>
     </section>

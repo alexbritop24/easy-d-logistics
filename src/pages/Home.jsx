@@ -13,9 +13,9 @@ import CTABanner from "../components/CTABanner";
 
 export default function Home() {
   useSEO({
-    title: "Easy D Logistics | 24/7 Dispatching for Owner-Operators & Fleets",
+    title: "Truck Dispatch Services & DOT Compliance | Easy D Logistics",
     description:
-      "24/7 dispatching for owner-operators and small fleets. We handle load booking, broker negotiation, and paperwork so you can focus on the road.",
+      "Easy D Logistics provides truck dispatch services, DOT compliance support, MC setup help, load booking, broker negotiation, and paperwork support for owner-operators and small fleets nationwide.",
     path: "/",
     ogImage: "/easy-d-logo.png",
   });
@@ -53,8 +53,8 @@ export default function Home() {
                 </h2>
 
                 <p className="mt-3 text-white/72 max-w-2xl leading-relaxed">
-                  We help with DOT and MC compliance support so you can focus on
-                  driving, dispatching, and keeping your operation moving.
+                  We help with DOT compliance, MC authority setup, USDOT registration,
+                  and filing support so your trucking operation can stay active and moving.
                 </p>
               </div>
 

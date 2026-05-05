@@ -7,9 +7,9 @@ import aboutImage from "../assets/dispatch-team-portrait.jpeg";
 
 export default function About() {
   useSEO({
-    title: "About | Easy D Logistics",
+    title: "About Easy D Logistics | Dispatch & Compliance Support",
     description:
-      "Learn about Easy D Logistics — dispatch support built for owner-operators and small fleets. Drivers first, strong rates, less admin stress.",
+      "Easy D Logistics is based in Provo, Utah and provides truck dispatch services, DOT compliance support, MC setup help, and paperwork coordination for owner-operators and small fleets nationwide.",
     path: "/about",
     ogImage: "/easy-d-logo.png",
   });
@@ -17,16 +17,15 @@ export default function About() {
   const reasons = [
     "Transparent communication at all times",
     "Strong negotiation for top-paying loads",
-    "24/7 support with real dispatchers",
-    "Paperwork handled for you",
-    "Focus on growing driver revenue consistently",
+    "24/7 dispatch support",
+    "Paperwork and compliance support",
+    "Focus on helping drivers stay loaded and road-ready",
   ];
 
   return (
     <main className="bg-[var(--color-primary)] text-white">
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Page Header */}
           <header className="text-center max-w-3xl mx-auto mb-14 md:mb-18">
             <Reveal y={18}>
               <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-white/75">
@@ -45,16 +44,14 @@ export default function About() {
 
             <Reveal y={14} delay={0.08}>
               <p className="mt-5 text-white/78 text-base md:text-lg leading-relaxed">
-                Easy D Logistics helps owner-operators and small fleets reduce
-                downtime, improve load quality, and stay focused on the road
-                while we handle dispatching, broker communication, and admin work.
+                Based in Provo, Utah, Easy D Logistics helps owner-operators and
+                small fleets nationwide with truck dispatch services, DOT & MC
+                compliance support, load coordination, and paperwork management.
               </p>
             </Reveal>
           </header>
 
-          {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-stretch">
-            {/* Left */}
             <div className="space-y-6">
               <Reveal y={16}>
                 <div className="rounded-2xl border border-white/10 bg-[var(--color-primary-softer)] p-7 shadow-[var(--shadow-card)]">
@@ -64,10 +61,10 @@ export default function About() {
 
                   <p className="text-white/75 text-lg leading-relaxed">
                     Easy D Logistics is committed to helping truckers maximize
-                    earnings, reduce downtime, and eliminate administrative
-                    stress. We assist owner-operators and small fleets with
-                    reliable, 24/7 dispatching services that prioritize
-                    integrity, consistency, and real support.
+                    earnings, reduce downtime, and eliminate administrative stress.
+                    We assist owner-operators and small fleets with reliable
+                    dispatching, broker communication, DOT compliance support,
+                    MC setup guidance, and paperwork coordination.
                   </p>
                 </div>
               </Reveal>
@@ -79,9 +76,9 @@ export default function About() {
                   </h2>
 
                   <p className="text-white/75 leading-relaxed">
-                    Our mission is to provide top-tier dispatching services that
-                    build long-term partnerships with drivers and help them grow
-                    sustainably in a competitive market.
+                    Our mission is to provide dependable dispatch and compliance
+                    support that helps drivers stay loaded, road-ready, and prepared
+                    to grow sustainably in a competitive trucking market.
                   </p>
                 </div>
               </Reveal>
@@ -94,10 +91,7 @@ export default function About() {
 
                   <ul className="space-y-3">
                     {reasons.map((reason) => (
-                      <li
-                        key={reason}
-                        className="flex items-start gap-3 text-white/78"
-                      >
+                      <li key={reason} className="flex items-start gap-3 text-white/78">
                         <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--color-accent)] shrink-0" />
                         <span>{reason}</span>
                       </li>
@@ -117,14 +111,14 @@ export default function About() {
                   </h3>
 
                   <p className="text-white/72 text-sm md:text-base leading-relaxed">
-                    Everything we do is built around supporting truckers,
-                    protecting their time, and helping them move more profitably.
+                    Everything we do is built around supporting truckers, protecting
+                    their time, helping them move more profitably, and keeping their
+                    operations organized and compliant.
                   </p>
                 </motion.div>
               </Reveal>
             </div>
 
-            {/* Right */}
             <Reveal y={18} delay={0.06}>
               <motion.div
                 whileHover={{ scale: 1.01 }}
@@ -133,7 +127,7 @@ export default function About() {
               >
                 <img
                   src={aboutImage}
-                  alt="Easy D Logistics dispatch support team"
+                  alt="Easy D Logistics dispatch and compliance support team"
                   className="w-full h-full object-cover"
                 />
 
@@ -141,12 +135,12 @@ export default function About() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <div className="inline-flex items-center px-3 py-1 rounded-full border border-white/15 bg-white/10 backdrop-blur-sm text-xs font-semibold tracking-wide text-white/90">
-                    Real Dispatch Support
+                    Real Dispatch + Compliance Support
                   </div>
 
                   <p className="mt-4 max-w-md text-white/85 text-sm md:text-base leading-relaxed">
                     Built for owner-operators and small fleets who want better
-                    rates, fewer headaches, and a dispatch partner they can rely on.
+                    rates, fewer headaches, compliance support, and a partner they can rely on.
                   </p>
                 </div>
               </motion.div>
@@ -155,7 +149,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
       <Reveal y={18} delay={0.12}>
         <section className="px-6 pb-20">
           <div className="max-w-6xl mx-auto rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] px-8 py-10 md:px-12 md:py-12 shadow-[var(--shadow-card)]">
@@ -169,8 +162,8 @@ export default function About() {
                 </h2>
 
                 <p className="mt-3 text-white/75 max-w-2xl">
-                  Let us help you stay loaded, reduce stress, and keep your
-                  operation moving with confidence.
+                  Let us help you stay loaded, reduce stress, handle paperwork,
+                  and keep your operation moving with confidence.
                 </p>
               </div>
 

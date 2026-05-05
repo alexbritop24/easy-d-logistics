@@ -9,9 +9,9 @@ function encode(data) {
 
 export default function GetStarted() {
   useSEO({
-    title: "Get Started | Easy D Logistics",
+    title: "Get Started With Truck Dispatch & Compliance | Easy D Logistics",
     description:
-      "Start dispatching with Easy D Logistics. Submit your equipment type, lanes, MC info, and revenue goal — we’ll reach out fast.",
+      "Start with Easy D Logistics for truck dispatch services, DOT compliance support, MC setup help, load booking, paperwork, and broker coordination.",
     path: "/get-started",
     ogImage: "/easy-d-logo.png",
   });
@@ -101,12 +101,11 @@ export default function GetStarted() {
 
   return (
     <main className="bg-[var(--color-primary)] text-white">
-      {/* HEADER */}
       <section className="px-6 pt-24 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <Reveal y={18}>
             <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/75">
-              Start The Process
+              Start Dispatch Or Compliance Support
             </div>
           </Reveal>
 
@@ -121,14 +120,14 @@ export default function GetStarted() {
 
           <Reveal y={14} delay={0.08}>
             <p className="mt-5 text-white/75 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-              Share your equipment, lanes, and goals. We’ll review your information
-              and follow up with the right next steps for your operation.
+              Share your truck details, equipment, MC information, lanes, and goals.
+              We’ll review your information and help with the next step for dispatch,
+              DOT compliance, or MC setup support.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* FORM */}
       <section className="px-6 pb-20">
         <div className="max-w-4xl mx-auto">
           <Reveal y={18} delay={0.08}>
@@ -143,7 +142,6 @@ export default function GetStarted() {
               >
                 <input type="hidden" name="form-name" value="get-started" />
 
-                {/* Honeypot */}
                 <input
                   name="company"
                   type="text"
@@ -182,29 +180,37 @@ export default function GetStarted() {
                   ))}
                 </div>
 
-                <div>
-                  <label className="block text-sm mb-2 text-white/72">
-                    {fields[2].label}
-                  </label>
+                {fields.slice(2).map((field, index) => {
+                  if (index === 0 || index === 5) {
+                    return (
+                      <div key={field.name}>
+                        <label className="block text-sm mb-2 text-white/72">
+                          {field.label}
+                        </label>
 
-                  <input
-                    name={fields[2].name}
-                    type={fields[2].type}
-                    value={form[fields[2].name]}
-                    onChange={update}
-                    required={fields[2].required}
-                    placeholder={fields[2].label}
-                    className="
-                      w-full px-4 py-3 rounded-xl
-                      bg-[var(--color-primary)]
-                      border border-white/10
-                      focus:border-[var(--color-accent)]
-                      outline-none
-                      text-white placeholder-white/35
-                      transition
-                    "
-                  />
-                </div>
+                        <input
+                          name={field.name}
+                          type={field.type}
+                          value={form[field.name]}
+                          onChange={update}
+                          required={field.required}
+                          placeholder={field.label}
+                          className="
+                            w-full px-4 py-3 rounded-xl
+                            bg-[var(--color-primary)]
+                            border border-white/10
+                            focus:border-[var(--color-accent)]
+                            outline-none
+                            text-white placeholder-white/35
+                            transition
+                          "
+                        />
+                      </div>
+                    );
+                  }
+
+                  return null;
+                })}
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   {fields.slice(3, 5).map((field) => (
@@ -305,9 +311,7 @@ export default function GetStarted() {
                 {status.type !== "idle" && (
                   <p
                     className={`text-sm ${
-                      status.type === "success"
-                        ? "text-green-300"
-                        : "text-red-300"
+                      status.type === "success" ? "text-green-300" : "text-red-300"
                     }`}
                   >
                     {status.message}

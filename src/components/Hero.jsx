@@ -9,7 +9,7 @@ export default function Hero() {
       style={{
         backgroundImage: `url(${heroBg})`,
         backgroundSize: "cover",
-        backgroundPosition: "68% center", // ✅ FIXED (mobile crop)
+        backgroundPosition: "68% center",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -18,14 +18,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(147,197,253,0.12),transparent_38%)]" />
 
       <div className="relative max-w-6xl mx-auto text-center px-6">
-        
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-sm md:text-base text-white/80"
         >
-          24/7 Dispatch Support
+          Dispatch • DOT Compliance • MC Setup
         </motion.div>
 
         <motion.h1
@@ -34,9 +33,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight"
         >
-          Dispatching Solutions{" "}
+          Truck Dispatch Services
           <span className="block text-[var(--color-accent)]">
-            That Scale With Your Fleet
+            Built To Keep You Moving
           </span>
         </motion.h1>
 
@@ -46,8 +45,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 text-lg md:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed"
         >
-          From owner operators to growing trucking fleets, we handle load booking,
-          broker communication, and paperwork so you can stay focused on the road.
+          Based in Provo, Utah, Easy D Logistics helps owner-operators and small
+          fleets nationwide with load booking, broker communication, DOT & MC
+          compliance, and paperwork support.
         </motion.p>
 
         <motion.div
@@ -57,17 +57,17 @@ export default function Hero() {
           className="mt-12 flex flex-col sm:flex-row justify-center gap-4"
         >
           <a
-            href="/contact"
+            href="/get-started"
             className="px-8 py-3 bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold rounded-lg hover:opacity-90"
           >
-            Contact Us
+            Get Started
           </a>
 
           <a
-            href="/services"
+            href="/dot-compliance"
             className="px-8 py-3 border border-white/40 rounded-lg text-white hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
           >
-            View Services
+            DOT Compliance
           </a>
         </motion.div>
 
@@ -78,21 +78,32 @@ export default function Hero() {
           className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto"
         >
           <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-5">
-            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">24/7</div>
-            <div className="mt-1 text-sm md:text-base text-white/75">Dispatcher availability</div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">
+              24/7
+            </div>
+            <div className="mt-1 text-sm md:text-base text-white/75">
+              Dispatch support
+            </div>
           </div>
 
           <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-5">
-            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">Fast</div>
-            <div className="mt-1 text-sm md:text-base text-white/75">Broker communication & updates</div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">
+              DOT
+            </div>
+            <div className="mt-1 text-sm md:text-base text-white/75">
+              Compliance help
+            </div>
           </div>
 
           <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-5">
-            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">Reliable</div>
-            <div className="mt-1 text-sm md:text-base text-white/75">Paperwork and load support</div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">
+              MC
+            </div>
+            <div className="mt-1 text-sm md:text-base text-white/75">
+              Authority setup
+            </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
