@@ -5,10 +5,6 @@ import Reveal from "../components/Reveal";
 
 import contactHero from "../assets/dispatch-support-team.jpeg";
 
-function encode(data) {
-  return new URLSearchParams(data).toString();
-}
-
 export default function Contact() {
   useSEO({
     title: "Contact | Easy D Logistics",
@@ -28,31 +24,42 @@ export default function Contact() {
     const form = new FormData(formEl);
 
     const payload = {
-      "form-name": "contact",
-      name: form.get("name")?.toString().trim(),
-      email: form.get("email")?.toString().trim(),
-      phone: form.get("phone")?.toString().trim(),
-      message: form.get("message")?.toString().trim(),
-      company: form.get("company")?.toString().trim(),
+      full_name: form.get("name")?.toString().trim() || "",
+      email: form.get("email")?.toString().trim() || "",
+      phone: form.get("phone")?.toString().trim() || "",
+      company_name: "",
+      service_interest: "General contact / dispatch inquiry",
+      message: form.get("message")?.toString().trim() || "",
+      source: "Website - Contact Page",
+      page_url: window.location.href,
+      company: form.get("company")?.toString().trim() || "",
     };
 
     if (payload.company) {
       formEl.reset();
-      setStatus({ type: "success", message: "Message sent. We’ll reach out ASAP." });
+      setStatus({
+        type: "success",
+        message: "Message sent. We’ll reach out ASAP.",
+      });
       return;
     }
 
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/.netlify/functions/lead-capture", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(payload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) throw new Error("Failed to send message");
 
       formEl.reset();
-      setStatus({ type: "success", message: "Message sent. We’ll reach out ASAP." });
+      setStatus({
+        type: "success",
+        message: "Message sent. We’ll reach out ASAP.",
+      });
     } catch (err) {
       setStatus({
         type: "error",
@@ -180,16 +187,7 @@ export default function Contact() {
           {/* FORM */}
           <Reveal y={18} delay={0.06}>
             <div className="rounded-2xl border border-white/10 bg-[var(--color-primary-softer)] p-7 md:p-8 shadow-[var(--shadow-card)]">
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="company"
-                onSubmit={handleSubmit}
-                className="space-y-5"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <input
                   name="company"
                   type="text"
@@ -253,7 +251,8 @@ export default function Contact() {
                 )}
 
                 <p className="text-xs text-white/42 leading-relaxed">
-                  This form securely emails submissions to info@easydlogistics.com.
+                  This form securely sends your message to the Easy D Logistics
+                  team for follow-up.
                 </p>
               </form>
             </div>

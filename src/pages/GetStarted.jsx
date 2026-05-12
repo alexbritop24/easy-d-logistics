@@ -3,10 +3,6 @@ import useSEO from "../hooks/useSEO";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 
-function encode(data) {
-  return new URLSearchParams(data).toString();
-}
-
 export default function GetStarted() {
   useSEO({
     title: "Get Started With Truck Dispatch & Compliance | Easy D Logistics",
@@ -41,28 +37,45 @@ export default function GetStarted() {
     setStatus({ type: "loading", message: "Sending..." });
 
     if (form.company?.trim()) {
-      setStatus({ type: "success", message: "Submitted. We’ll reach out ASAP." });
+      setStatus({
+        type: "success",
+        message: "Submitted. We’ll reach out ASAP.",
+      });
       return;
     }
 
+    const message = `
+MC Number: ${form.mcNumber || "Not provided"}
+Truck Type: ${form.truckType}
+Equipment: ${form.equipment}
+Preferred Regions: ${form.regions}
+Weekly Revenue Goal: ${form.revenueGoal}
+    `.trim();
+
     const payload = {
-      "form-name": "get-started",
-      name: form.name.trim(),
+      full_name: form.name.trim(),
       phone: form.phone.trim(),
       email: form.email.trim(),
-      mcNumber: form.mcNumber.trim(),
-      truckType: form.truckType.trim(),
+      company_name: "",
+      service_interest: "Get Started - Dispatch / Compliance Inquiry",
+      message,
+      source: "Website - Get Started Page",
+      page_url: window.location.href,
+      mc_number: form.mcNumber.trim(),
+      truck_type: form.truckType.trim(),
       equipment: form.equipment.trim(),
-      regions: form.regions.trim(),
-      revenueGoal: form.revenueGoal.trim(),
+      preferred_regions: form.regions.trim(),
+      revenue_goal: form.revenueGoal.trim(),
       company: form.company.trim(),
     };
 
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/.netlify/functions/lead-capture", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(payload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) throw new Error("Failed to submit form");
@@ -79,7 +92,10 @@ export default function GetStarted() {
         company: "",
       });
 
-      setStatus({ type: "success", message: "Submitted. We’ll reach out ASAP." });
+      setStatus({
+        type: "success",
+        message: "Submitted. We’ll reach out ASAP.",
+      });
     } catch (err) {
       setStatus({
         type: "error",
@@ -132,16 +148,7 @@ export default function GetStarted() {
         <div className="max-w-4xl mx-auto">
           <Reveal y={18} delay={0.08}>
             <div className="rounded-3xl border border-white/10 bg-[var(--color-primary-softer)] p-7 md:p-10 shadow-[var(--shadow-card)]">
-              <form
-                name="get-started"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="company"
-                onSubmit={submit}
-                className="space-y-6"
-              >
-                <input type="hidden" name="form-name" value="get-started" />
-
+              <form onSubmit={submit} className="space-y-6">
                 <input
                   name="company"
                   type="text"
